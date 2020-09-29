@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@300;400;500;600;700&display=swap);
 
 * {
     padding: 0;
@@ -11,46 +11,46 @@ a {
     text-decoration: none;
 }
 
-/* Header section */
-.header {
-    overflow: hidden;
+/* Nav section */
+nav {
+    display: flex;
     padding: 20px 100px;
-}
-  
-.header a {
-    float: left;
-    color: white;
-    text-align: center;
-    padding: 12px;
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 25px;
-    border-bottom: 3px solid transparent;
-}
-  
-.header a.logo {
-    font-size: 35px;
-    font-weight: bold;
-}
-  
-.header-right a:hover {
-    border-bottom: 3px solid crimson;
-}
-  
-.header-right a.active {
-    border-bottom: 3px solid crimson;
-    font-weight: 100000;
-}
-  
-.header-right {
-    float: right;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 10vh;
 }
 
-.header-right img {
-    padding-left: 20px;
-    height: 52px;
+nav a {
+    color: white;
 }
-/* End header section */
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links a {
+    padding: 13px;
+    font-size: 18px;
+    font-weight: 600;
+    border-bottom: 3px solid transparent;
+    transition: 0.5s;
+}
+
+.nav-links a:hover {
+    border-bottom: 3px solid crimson;
+    transition: 0.5s;
+}
+
+.nav-links a.active {
+    border-bottom: 3px solid crimson;
+}
+
+.logo a {
+    font-family: 'Lobster', cursive;
+    font-size: 50px;
+}
+/* End nav section */
 
 /* Hero section */
 .hero {
