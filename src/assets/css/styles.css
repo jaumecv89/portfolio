@@ -82,7 +82,7 @@ nav a:hover {
 }
   
 .nav-btn {
-    width: 55px;
+    width: 45px;
     cursor: pointer;
 }
   
@@ -91,8 +91,8 @@ nav a:hover {
     width: 100%;
     box-shadow: 0 2px 10px 0 rgba(0,0,0,0.3);
     border-radius: 3px;
-    height: 6px;
-    background: #fff;
+    height: 3px;
+    background: #ffff;
     transition: all .3s;
     position: relative;
 }
@@ -445,22 +445,22 @@ nav a:hover {
         transform: rotate(0);
     }
     50% {
-        top: 12px;
+        top: 10px;
         transform: rotate(0);
     }
     100% {
-        top: 12px;
+        top: 10px;
         transform: rotate(45deg);
     }
 }
   
 @keyframes top-2 {
     0% {
-        top: 12px;
+        top: 10px;
         transform: rotate(45deg);
     }
     50% {
-        top: 12px;
+        top: 10px;
         transform: rotate(0deg);
     }
     100% {
@@ -475,22 +475,22 @@ nav a:hover {
         transform: rotate(0);
     }
     50% {
-        bottom: 12px;
+        bottom: 10px;
         transform: rotate(0);
     }
     100% {
-        bottom: 16px;
+        bottom: 12px;
         transform: rotate(135deg);
     }
 }
   
 @keyframes bottom-2 {
         0% {
-        bottom: 12px;
+        bottom: 10px;
         transform: rotate(135deg);
     }
     50% {
-        bottom: 12px;
+        bottom: 10px;
         transform: rotate(0);
     }
     100% {
