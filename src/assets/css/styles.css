@@ -309,22 +309,6 @@ nav a:hover {
 /* Media responsive */
 @media screen and (max-width: 600px) {
     /* xsmall */
-    .logo a {
-        font-size: 30px;
-    }
-
-    .nav-links {
-        display: none;
-    }
-
-    .nav-social {
-        display: none;
-    }
-
-    .nav-responsive {
-        display: flex;
-    }
-
     .hero {
         background-position: center left;
     }
@@ -344,18 +328,6 @@ nav a:hover {
 
 @media screen and (max-width: 960px) {
     /* small */
-    .nav-links {
-        display: none;
-    }
-
-    .nav-social {
-        display: none;
-    }
-
-    .nav-responsive {
-        display: flex;
-    }
-
     .hero {
         background-position: center left;
     }
@@ -381,6 +353,7 @@ nav a:hover {
     /* medium */
     nav {
         position: fixed;
+        display: flexbox;
         width: 100%;
         height: 100vh;
         z-index: 2;
@@ -392,13 +365,17 @@ nav a:hover {
     }
 
     .nav-links {
+        transform: translateY(-100%);
         width: 100%;
         height: 100%;
         text-align: center;
         flex-direction: column;
+        transition: all .5s;
     }
 
     .nav-links.show {
+        transform: translateY(0);
+        transition: all .5s;
         top: 0;
     }
 
