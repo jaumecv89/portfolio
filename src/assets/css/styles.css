@@ -20,11 +20,14 @@ a {
 
 /* Nav section */
 nav {
+    position: fixed;
     display: flex;
     padding: 20px 50px 0 50px;
     align-items: center;
+    width: 100%;
     min-height: 10vh;
     justify-content: space-between;
+    z-index: 3;
 }
 
 nav a {
@@ -129,7 +132,7 @@ nav a:hover {
     background-image: url(../images/logo.png);
     background-position: center;
     background-size: cover;
-    width: 55px;
+    min-width: 55px;
     height: 55px;
     transition: 0.5s;
 }
@@ -530,3 +533,7 @@ nav a:hover {
     }
 }
 /* End of keyframes */
+
+.contact {
+    height: 1000px;
+}
