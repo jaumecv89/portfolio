@@ -24,6 +24,24 @@ body {
     background: crimson;
 }
 
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #474747;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(34, 34, 34);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: crimson;
+}
+/* End scrollbar */
+
 /* Back to top button */
 #back-to-top-btn {
     display: none;
