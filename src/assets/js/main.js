@@ -4,6 +4,9 @@ $(function() {
     var navLinks = $('.nav-links');
     var navLinksA = $('.nav-links a');
     var navLinksButton = $('.nav-links a');
+    var backToTopButton = document.querySelector("#back-to-top-btn");
+
+    window.addEventListener("scroll", scrollFunction);
 
     function setActive(i) {
         navLinksA.each(function () {
@@ -13,6 +16,27 @@ $(function() {
                 $(this).removeClass("active");
             }
         });
+    }
+
+    // Back to top scroll function
+    function scrollFunction() {
+        if(window.pageYOffset > window.innerHeight) {
+            if (!backToTopButton.classList.contains("btnEntrance")) {
+                backToTopButton.classList.remove("btnExit");
+                backToTopButton.classList.add("btnEntrance");
+                backToTopButton.style.display = "block";
+            }
+        }
+        else {
+            if (backToTopButton.classList.contains("btnEntrance")) {
+                backToTopButton.classList.remove("btnEntrance");
+                backToTopButton.classList.add("btnExit");
+                backToTopButton.style.display = "block";
+                setTimeout(function() {
+                    backToTopButton.style.display = "none";
+                }, 250);
+            }
+        }
     }
 
     $('a[href*=\\#]').on('click', function(e) {

@@ -19,10 +19,62 @@ body {
     background: #0a192f;
 }
 
-/* Font Awesome icons */
-.fa {
+::selection {
+    color: white;
+    background: crimson;
 }
-/* End font awesome icons */
+
+/* Back to top button */
+#back-to-top-btn {
+    display: none;
+    position: fixed;
+    height: 50px;
+    width: 50px;
+    bottom: 30px;
+    right: 30px;
+    font-size: 26px;
+    background-color: crimson;
+    outline: none;
+    border: 3px solid crimson;
+    border-radius: 50%;
+    transition: 0.2s;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-property: background-color, color;
+}
+
+#back-to-top-btn:hover, #back-to-top-btn:focus {
+    background-color: #060e1b;
+}
+
+#back-to-top-btn i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+#back-to-top-btn a {
+    color: white;
+}
+#back-to-top-btn a:hover {
+    transition: 0.2s;
+    color: crimson;
+}
+
+.btnEntrance {
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-name: btnEntrance;
+}
+
+.btnExit {
+    animation-duration: 0.25s;
+    animation-fill-mode: both;
+    animation-name: btnExit;
+}
+/* End back to top button */
 
 /* Nav section */
 nav {
@@ -381,15 +433,15 @@ footer .madewith span {
 }
 
 footer .madewith .html {
-    background-image: url(../images/html_icon.png);
+    background-image: url(../images/html5-original.svg);
 }
 
 footer .madewith .css {
-    background-image: url(../images/css_icon.png);
+    background-image: url(../images/css3-original.svg);
 }
 
 footer .madewith .js {
-    background-image: url(../images/js_icon.png);
+    background-image: url(../images/javascript-original.svg);
 }
 
 footer .social-buttons {
@@ -410,7 +462,7 @@ footer .social-button {
     transition: all .5s ease;
 }
 
-footer .social-button .fa {
+footer .social-button i {
     color: rgb(187, 187, 187);
     font-size: 1.2rem;
     transition: all .5s ease;
@@ -422,7 +474,7 @@ footer .social-button:hover {
     transition: all .5s ease;
 }
 
-footer .social-button:hover .fa {
+footer .social-button:hover i {
     color: #060e1b;
     transition: all .5s ease;
 }
@@ -442,6 +494,12 @@ footer .copyright h3 {
 /* Media responsive */
 @media screen and (max-width: 600px) {
     /* xsmall */
+    #back-to-top-btn {
+        font-size: 18px;
+        width: 32px;
+        height: 32px;
+    }
+
     .hero {
         background-position: center left;
     }
@@ -461,6 +519,12 @@ footer .copyright h3 {
 
 @media screen and (max-width: 960px) {
     /* small */
+    #back-to-top-btn {
+        font-size: 22px;
+        width: 40px;
+        height: 40px;
+    }
+
     .hero {
         background-position: center left;
     }
@@ -660,6 +724,27 @@ footer .copyright h3 {
     }
     100% {
         transform: scale(1);
+    }
+}
+
+@keyframes btnEntrance {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes btnExit {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
     }
 }
 /* End of keyframes */
