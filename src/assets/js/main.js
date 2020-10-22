@@ -5,6 +5,7 @@ $(function() {
     var navLinksA = $('.nav-links a');
     var navLinksButton = $('.nav-links a');
     var backToTopButton = document.querySelector("#back-to-top-btn");
+    var navBar = document.getElementById("menu");
 
     window.addEventListener("scroll", scrollFunction);
 
@@ -20,7 +21,7 @@ $(function() {
 
     // Back to top scroll function
     function scrollFunction() {
-        if(window.pageYOffset > window.innerHeight) {
+        if (window.pageYOffset > window.innerHeight) {
             if (!backToTopButton.classList.contains("btnEntrance")) {
                 backToTopButton.classList.remove("btnExit");
                 backToTopButton.classList.add("btnEntrance");
@@ -31,9 +32,26 @@ $(function() {
             if (backToTopButton.classList.contains("btnEntrance")) {
                 backToTopButton.classList.remove("btnEntrance");
                 backToTopButton.classList.add("btnExit");
-                backToTopButton.style.display = "block";
                 setTimeout(function() {
                     backToTopButton.style.display = "none";
+                }, 250);
+            }
+        }
+
+        if (window.pageYOffset > window.innerHeight * 0.50) {
+            if (!navBar.classList.contains("navEntrance")) {
+                navBar.classList.add("sticky");
+                navBar.classList.remove("navExit");
+                navBar.classList.add("navEntrance");
+            } 
+        } 
+        else {
+            if (navBar.classList.contains("navEntrance")) {
+                navBar.classList.remove("navEntrance");
+                navBar.classList.add("navExit");
+                setTimeout(function() {
+                    navBar.classList.remove("navExit");
+                    navBar.classList.remove("sticky");
                 }, 250);
             }
         }
