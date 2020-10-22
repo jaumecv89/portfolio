@@ -19,8 +19,10 @@ $(function() {
         });
     }
 
-    // Back to top scroll function
+    // On scroll function
     function scrollFunction() {
+
+        // Back to top scroll function
         if (window.pageYOffset > window.innerHeight) {
             if (!backToTopButton.classList.contains("btnEntrance")) {
                 backToTopButton.classList.remove("btnExit");
@@ -38,6 +40,7 @@ $(function() {
             }
         }
 
+        // Sticky menu function
         if (window.pageYOffset > window.innerHeight * 0.50) {
             if (!navBar.classList.contains("navEntrance")) {
                 navBar.classList.add("sticky");

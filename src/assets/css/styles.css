@@ -343,23 +343,27 @@ nav a:hover {
 }
 
 .hero .cta {
+    width: 400px;
+    text-align: center;
     display: inline-block;
     padding: 10px 30px;
-    color: crimson;
+    color: white;
+    border: 5px solid crimson;
     background-color: transparent;
-    border: 3px solid crimson;
+    text-align: center;
     font-size: 2rem;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: .1rem;
     margin-top: 30px;
-    transition: .3s ease background-color;
-    transition-property: background-color, color;
+    transition: all 0.5s;
 }
 
 .hero .cta:hover {
-    color: white;
     background-color: crimson;
+    transition: 0.5s;
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+
 }
 
 .hero-bottom {
