@@ -6,9 +6,11 @@ $(function() {
     var navLinksButton = $('.nav-links a');
     var backToTopButton = document.querySelector("#back-to-top-btn");
     var navBar = document.getElementById("menu");
+    var body = document.querySelector("body");
 
     window.addEventListener("scroll", scrollFunction);
 
+    // Function to set the active menu
     function setActive(i) {
         navLinksA.each(function () {
             if($(this).attr('href') == '#' + i) {
@@ -19,8 +21,25 @@ $(function() {
         });
     }
 
+    // Function to activate or deactivate scrolling
+    function noScroll() {
+        if (body.classList.contains("no-scroll")) {
+            body.classList.remove('no-scroll');
+        }
+        else {
+            body.classList.add('no-scroll');
+        }
+    }
+
     // On scroll function
     function scrollFunction() {
+
+        // Active section function
+        $('section').each(function () {
+            if($(this).position().top <= $(document).scrollTop() && ($(this).position().top + $(this).outerHeight()) > $(document).scrollTop()) {
+                setActive($(this).attr('id'));
+            }
+        });
 
         // Back to top scroll function
         if (window.pageYOffset > window.innerHeight) {
@@ -70,6 +89,7 @@ $(function() {
         $(this).toggleClass('not-active');
         $(responsiveMenu).toggleClass('show');
         $(navLinks).toggleClass('show');
+        noScroll();
     });
 
     navLinksButton.on('click', function() {
@@ -77,13 +97,8 @@ $(function() {
         $(btn).toggleClass('not-active');
         $(responsiveMenu).toggleClass('show');
         $(navLinks).toggleClass('show');
-    });
-
-    $(document).scroll(function () {
-        $('section').each(function () {
-            if($(this).position().top <= $(document).scrollTop() && ($(this).position().top + $(this).outerHeight()) > $(document).scrollTop()) {
-                setActive($(this).attr('id'));
-            }
-        });
+        if (body.classList.contains("no-scroll")) {
+            body.classList.remove('no-scroll');
+        }
     });
 });

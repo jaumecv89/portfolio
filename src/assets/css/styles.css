@@ -19,6 +19,10 @@ body {
     background: #0a192f;
 }
 
+.no-scroll {
+    overflow: hidden;
+}
+
 ::selection {
     color: white;
     background: crimson;
@@ -63,6 +67,7 @@ body {
 
 #back-to-top-btn:hover, #back-to-top-btn:focus {
     background-color: #060e1b;
+    box-shadow: 0 10px 10px -8px rgba(0, 0, 0,.7);
 }
 
 #back-to-top-btn i {
@@ -101,7 +106,6 @@ nav {
     align-items: center;
     width: 100%;
     justify-content: space-between;
-    z-index: 3;
 }
 
 nav a {
@@ -224,7 +228,7 @@ nav a:hover {
     height: 100vh;
     position: fixed;
     top: -100%;
-    z-index: 2;
+    z-index: 1;
     background: rgba(0, 0, 0, 0.966);
     transition: all .5s;
 }
@@ -343,7 +347,6 @@ nav a:hover {
 }
 
 .hero .cta {
-    width: 400px;
     text-align: center;
     display: inline-block;
     padding: 10px 30px;
@@ -356,14 +359,13 @@ nav a:hover {
     text-transform: uppercase;
     letter-spacing: .1rem;
     margin-top: 30px;
-    transition: all 0.5s;
+    transition: 0.5s;
 }
 
 .hero .cta:hover {
     background-color: crimson;
     transition: 0.5s;
     box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
-
 }
 
 .hero-bottom {
@@ -406,6 +408,92 @@ nav a:hover {
     z-index: -1;
 }
 /* End hero section */
+
+/* About section */
+#about {
+    width: 100%;
+}
+
+#about a {
+    color: rgb(218, 65, 96);
+    transition: 0.5s;
+}
+
+#about a:hover {
+    color: crimson;
+    transition: 0.5s;
+}
+
+#about p {
+    margin: 0 0 15px;
+    color: rgb(202, 202, 202);
+    font-size: 1.15rem;
+    line-height: 1.75rem;
+}
+
+.about-intro {
+    background: #060e1b;
+    text-align: center;
+    padding: 200px 25% 350px 25%;
+}
+
+.about-intro h2{
+    padding-bottom: 50px;
+    font-size: 2rem;
+    color: white;
+}
+
+.about-technologies {
+    margin: 0 20%;
+    position: relative;
+    top: -200px;
+    border: 1px solid #060e1b;
+    border-radius: 15px;
+    background: rgb(223, 223, 223);
+    color: #060e1b;
+    text-align: center;
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+}
+
+.about-technologies .row {
+    padding: 0 40px 35px 40px;
+    border-bottom: 1px solid #060e1b;
+}
+
+.about-technologies i {
+    font-size: 2.5rem;
+    padding: 50px 50px 25px 50px;
+    color: crimson;
+}
+
+.about-technologies h3 {
+    padding: 0 50px 25px 50px;
+    font-size: 1.50rem;
+    color: crimson;
+}
+
+.about-technologies h4 {
+    padding: 0 50px 35px 50px;
+    font-size: 1rem;
+    color: #060e1b;
+}
+
+.about-technologies ul {
+    justify-content: center;
+    display: inline-block;
+}
+
+.about-technologies li {
+    padding: 15px;
+    display: inline-block;
+}
+
+.tec-icon {
+    height: 75px;
+}
+/* End about section */
+
+/* Footer section */
 footer {
     color: rgb(187, 187, 187);
     background: #060e1b;
@@ -511,6 +599,7 @@ footer .social-button:hover {
     background: white;
     border-color: white;
     transition: all .5s ease;
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
 }
 
 footer .social-button:hover i {
@@ -526,8 +615,6 @@ footer .copyright h3 {
     color: rgb(126, 126, 126);
     font-size: 0.85rem;
 }
-/* Footer section */
-
 /* End footer section */
 
 /* Media responsive */
@@ -588,6 +675,7 @@ footer .copyright h3 {
 @media screen and (max-width: 1280px) {
     /* medium */
     nav {
+        position: fixed;
         width: 100%;
         max-height: 10vh;
         z-index: 2;
@@ -596,6 +684,7 @@ footer .copyright h3 {
 
     .responsive-menu.show {
         top: 0;
+        z-index: 1;
     }
 
     .nav-links {
@@ -673,6 +762,9 @@ footer .copyright h3 {
 }
 
 @keyframes hero_text_reveal {
+    0% {
+        color: white;
+    }
     100% {
         color: white;
     }
