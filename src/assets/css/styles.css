@@ -63,6 +63,7 @@ body {
     transition-duration: 0.2s;
     transition-timing-function: ease-in-out;
     transition-property: background-color, color;
+    z-index: 3;
 }
 
 #back-to-top-btn:hover, #back-to-top-btn:focus {
@@ -426,7 +427,7 @@ nav a:hover {
 
 #about p {
     margin: 0 0 15px;
-    color: rgb(202, 202, 202);
+    color: rgb(209, 209, 209);
     font-size: 1.15rem;
     line-height: 1.75rem;
 }
@@ -435,9 +436,15 @@ nav a:hover {
     background: #060e1b;
     text-align: center;
     padding: 200px 25% 350px 25%;
+    clip-path: polygon(
+        0 0, /* left top */
+        100% 0, /* right top */ 
+        100% 100%, /* right bottom */
+        0 90% /* left bottom */
+    );
 }
 
-.about-intro h2{
+.about-intro h2 {
     padding-bottom: 50px;
     font-size: 2rem;
     color: white;
@@ -449,7 +456,7 @@ nav a:hover {
     top: -200px;
     border: 1px solid #060e1b;
     border-radius: 15px;
-    background: rgb(223, 223, 223);
+    background: rgb(235, 235, 235);
     color: #060e1b;
     text-align: center;
     box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
@@ -492,6 +499,117 @@ nav a:hover {
     height: 75px;
 }
 /* End about section */
+
+/* Experience section */
+#experience {
+    width: 100%;
+    padding: 200px 0 100px 0;
+    text-align: center;
+}
+
+#experience h2 {
+    font-size: 2rem;
+    color: white;
+}
+
+#experience h3 {
+    font-size: 1.25rem;
+    color: rgb(209, 209, 209);
+}
+
+.exp-companies  h2 {
+    padding: 0 25% 100px 25%;
+}
+
+.exp-companies h3 {
+    padding: 0 30% 100px 30%;
+}
+
+.exp-companies ul {
+    width: 100%;
+    padding: 75px 0;
+    background: rgb(235, 235, 235);
+    justify-content: center;
+    display: inline-block;
+    clip-path: polygon(
+        0 0, /* left top */
+        100% 15%, /* right top */ 
+        100% 100%, /* right bottom */
+        0 85% /* left bottom */
+    );
+    z-index: 0;
+}
+
+.exp-companies li {
+    padding: 50px;
+    display: inline-block;
+}
+
+.exp-companies li img {
+    transition: transform .2s;
+}
+
+.exp-companies li img:hover {
+    transform: scale(1.1);
+}
+
+.exp-testimonials {
+    padding: 150px 50px 0 50px;
+}
+
+.exp-testimonials h2 {
+    padding: 0 50px 25px 50px;
+}
+
+.exp-testimonials h3 {
+    padding: 0 50px 25px 50px;
+}
+
+.testimonial {
+    padding-top: 100px;
+}
+
+.testimonial p {
+    padding: 50px 30% 50px 30%;
+    line-height: 2.2rem;
+    color: rgb(209, 209, 209);
+    font-size: 1.40rem;
+}
+
+.testimonial img {
+    width: 125px;
+    border-radius: 50%;
+}
+
+.testimonial h4 {
+    padding-bottom: 10px;
+    font-size: 1.50rem;
+    color: white;
+}
+
+.testimonial h5 {
+    padding-bottom: 50px;
+    font-weight: normal;
+    color: rgb(209, 209, 209);
+}
+
+.exp-testimonials i {
+    padding: 0 5px 0 5px;
+    color: crimson;
+    font-size: 1.1rem;
+}
+
+.exp-testimonials button {
+    border: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.testimonial-hide {
+    display: none;
+}
+/* End experience section */
 
 /* Footer section */
 footer {

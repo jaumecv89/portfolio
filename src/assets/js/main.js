@@ -5,8 +5,12 @@ $(function() {
     var navLinksA = $('.nav-links a');
     var navLinksButton = $('.nav-links a');
     var backToTopButton = document.querySelector("#back-to-top-btn");
+    var testimonialBtn1 = $('#testimonial-btn-1');
+    var testimonialBtn2 = $('#testimonial-btn-2');
     var navBar = document.getElementById("menu");
     var body = document.querySelector("body");
+    var testimonial1 = document.querySelector(".first");
+    var testimonial2 = document.querySelector(".second");
 
     window.addEventListener("scroll", scrollFunction);
 
@@ -100,5 +104,25 @@ $(function() {
         if (body.classList.contains("no-scroll")) {
             body.classList.remove('no-scroll');
         }
+    });
+
+    // First button to show the first testimonial and hide the rest
+    testimonialBtn1.on('click', function() {
+        testimonial1.classList.remove("testimonial-hide");
+        testimonial2.classList.add("testimonial-hide");
+        document.getElementById("testimonial-icon1").classList.remove("far");
+        document.getElementById("testimonial-icon1").classList.add("fas");
+        document.getElementById("testimonial-icon2").classList.remove("fas");
+        document.getElementById("testimonial-icon2").classList.add("far");
+    });
+
+    // Second button to show the second testimonial and hide the rest
+    testimonialBtn2.on('click', function() {
+        testimonial2.classList.remove("testimonial-hide");
+        testimonial1.classList.add("testimonial-hide");
+        document.getElementById("testimonial-icon1").classList.remove("fas");
+        document.getElementById("testimonial-icon1").classList.add("far");
+        document.getElementById("testimonial-icon2").classList.remove("far");
+        document.getElementById("testimonial-icon2").classList.add("fas");
     });
 });
