@@ -11,6 +11,8 @@ $(function() {
     var body = document.querySelector("body");
     var testimonial1 = document.querySelector(".first");
     var testimonial2 = document.querySelector(".second");
+    var testimonialIcon1 = document.getElementById("testimonial-icon1");
+    var testimonialIcon2 = document.getElementById("testimonial-icon2");
 
     window.addEventListener("scroll", scrollFunction);
 
@@ -108,21 +110,49 @@ $(function() {
 
     // First button to show the first testimonial and hide the rest
     testimonialBtn1.on('click', function() {
-        testimonial1.classList.remove("testimonial-hide");
-        testimonial2.classList.add("testimonial-hide");
-        document.getElementById("testimonial-icon1").classList.remove("far");
-        document.getElementById("testimonial-icon1").classList.add("fas");
-        document.getElementById("testimonial-icon2").classList.remove("fas");
-        document.getElementById("testimonial-icon2").classList.add("far");
+
+        // Animations
+        testimonial1.classList.remove("animation-exit-left");
+        testimonial1.classList.add("animation-entrance-left");
+        testimonial2.classList.remove("animation-entrance-right");
+        testimonial2.classList.add("animation-exit-right");
+
+        if (!testimonialIcon1.classList.contains("fas")) {
+            displayTestimonials();
+        }
+        
+        // Active icons logic
+        testimonialIcon1.classList.remove("far");
+        testimonialIcon1.classList.add("fas");
+        testimonialIcon2.classList.remove("fas");
+        testimonialIcon2.classList.add("far");
     });
 
     // Second button to show the second testimonial and hide the rest
     testimonialBtn2.on('click', function() {
-        testimonial2.classList.remove("testimonial-hide");
-        testimonial1.classList.add("testimonial-hide");
-        document.getElementById("testimonial-icon1").classList.remove("fas");
-        document.getElementById("testimonial-icon1").classList.add("far");
-        document.getElementById("testimonial-icon2").classList.remove("far");
-        document.getElementById("testimonial-icon2").classList.add("fas");
+
+        // Animations
+        testimonial1.classList.remove("animation-entrance-left");
+        testimonial1.classList.add("animation-exit-left");
+        testimonial2.classList.remove("animation-exit-right");
+        testimonial2.classList.add("animation-entrance-right");
+
+        if (!testimonialIcon2.classList.contains("fas")) {
+            displayTestimonials();
+        }
+
+        // Active icons logic
+        testimonialIcon1.classList.remove("fas");
+        testimonialIcon1.classList.add("far");
+        testimonialIcon2.classList.remove("far");
+        testimonialIcon2.classList.add("fas");
     });
+
+    // Hide or show testimonials with a delay
+    function displayTestimonials() {
+        setTimeout(function() {
+            testimonial1.classList.toggle("testimonial-hide");
+            testimonial2.classList.toggle("testimonial-hide"); 
+        }, 350);
+    }
 });
