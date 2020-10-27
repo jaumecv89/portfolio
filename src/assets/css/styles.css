@@ -587,7 +587,11 @@ nav a:hover {
 }
 
 .testimonial p {
-    padding: 50px 30% 50px 30%;
+    background: #060e1bd3;
+    border-radius: 15px;
+    padding: 25px 25px 100px 25px;
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+    margin: 0 30% 0 30%;
     line-height: 2.2rem;
     color: rgb(209, 209, 209);
     font-size: 1.40rem;
@@ -595,6 +599,8 @@ nav a:hover {
 
 .testimonial img {
     width: 125px;
+    border: 5px solid #060e1b83;
+    margin: -65px 25px 25px 25px;
     border-radius: 50%;
 }
 
