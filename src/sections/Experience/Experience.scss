@@ -1,0 +1,29 @@
+@use "../../abstracts" as *;
+
+.experience {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-top: 6rem;
+    @include linear-gradient-bg($primary-color, $primary-color-light);
+
+    &__container {
+        @include flex-column;
+        align-items: center;
+        padding: 1rem;
+
+        &--load-more-button {
+            width: fit-content;
+            @include primary-button;
+            margin-top: 3rem;
+        }
+
+        @include tablet {
+            max-width: $screen-tablet-min;
+        }
+
+        @include desktop {
+            max-width: $screen-desktop-min;
+        }
+    }
+}

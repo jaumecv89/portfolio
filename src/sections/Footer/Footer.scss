@@ -1,0 +1,70 @@
+@use "../../abstracts" as *;
+
+.footer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background-color: $primary-color-dark;
+
+    &__container {
+        @include flex-column;
+        align-items: center;
+        justify-content: center;
+        padding: 4rem 1rem;
+        line-height: 1.5rem;
+        gap: 1.5em;
+        user-select: none;
+
+        img {
+            width: 40px;
+        }
+
+        &--content {
+            @include flex-center;
+            flex-direction: column;
+            line-height: 2;
+            gap: 1.5rem;
+
+            ul {
+                display: flex;
+                gap: 2rem;
+
+                a {
+                    display: inline-block;
+                    position: relative;
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: $secondary-color;
+                    @include text-color-transition(0.25s);
+                    @include link-underline-transition(2px, -2px);
+                }
+            }
+
+            span {
+                display: flex;
+                padding-left: 0;
+                border: none;
+                font-size: 14px;
+                font-weight: 400;
+                color: $secondary-color;
+            }
+
+            @include tablet {
+                flex-direction: row;
+
+                span {
+                    padding-left: 1.5rem;
+                    border-left: 1px solid rgba(255, 255, 255, 0.3);
+                }
+            }
+        }
+
+        @include tablet {
+            max-width: $screen-tablet-min;
+        }
+
+        @include desktop {
+            max-width: $screen-desktop-min;
+        }
+    }
+}

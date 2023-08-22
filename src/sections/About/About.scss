@@ -1,0 +1,83 @@
+@use "../../abstracts" as *;
+
+.about {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    @include linear-gradient-bg($primary-color-light, $primary-color);
+
+    &__container {
+        padding: 1rem;
+
+        &--content {
+            @include flex-column;
+            line-height: 1.5;
+            gap: 2rem;
+
+            &__text {
+                color: $light-gray-color;
+                font-size: 1rem;
+                font-weight: 400;
+
+                p {
+                    padding-bottom: 1rem;
+                }
+
+                a {
+                    position: relative;
+                }
+
+                &--technologies {
+                    @include flex-row;
+                    gap: 3rem;
+
+                    &-column {
+                        @include flex-column;
+                        gap: 0.5rem;
+
+                        svg {
+                            font-size: 18px;
+                            color: $highlight-color;
+                            margin-right: 1rem;
+                        }
+
+                        span {
+                            @include flex-center;
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+
+            &__image {
+                min-width: 40%;
+                height: 400px;
+                border-radius: 10px;
+                background-image: url("../../assets/Images/about_image.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: 100% 70%;
+                box-shadow:
+                    rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+                    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+            }
+
+            @include tablet {
+                flex-direction: row;
+            }
+        }
+
+        @include tablet {
+            max-width: $screen-tablet-min;
+        }
+
+        @include desktop {
+            max-width: $screen-desktop-min;
+        }
+    }
+
+    &__link {
+        color: $highlight-color;
+        @include link-underline-transition(1px, -1px);
+    }
+}

@@ -1,0 +1,130 @@
+@use "../../abstracts" as *;
+
+.experience-element {
+    @include flex-row;
+    width: 100%;
+    user-select: none;
+
+    &__column-1 {
+        display: flex;
+        height: fit-content;
+        width: max-content;
+        flex-direction: column;
+        flex: 1;
+        text-align: right;
+        color: $light-gray-color;
+        font-size: 14px;
+        font-weight: 400;
+        margin: 2rem 3rem 0 0;
+
+        @media screen and (max-width: 900px) {
+            display: none;
+        }
+    }
+
+    &__column-2 {
+        @include flex-column;
+        border-left: 1px solid rgba(255, 255, 255, 0.15);
+        margin-right: 1.5rem;
+        padding: 2rem 0;
+
+        span {
+            position: absolute;
+            margin-left: -6px;
+            margin-top: 6px;
+            width: 11px;
+            height: 11px;
+            background-color: $primary-color;
+            border-radius: 50%;
+            border: 2px solid $light-gray-color;
+        }
+
+        @media screen and (max-width: 640px) {
+            display: none;
+        }
+    }
+
+    &__column-3 {
+        @include flex-column;
+        position: relative;
+        flex: 4;
+        padding: 1rem 1.5rem;
+        margin: 1rem 0;
+        font-weight: 500;
+        border-radius: 1rem;
+        cursor: pointer;
+
+        &__date {
+            color: $light-gray-color;
+            font-size: 14px;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+
+            @media screen and (min-width: 900px) {
+                display: none;
+            }
+        }
+
+        &__title {
+            color: $secondary-color;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        &__subtitle {
+            color: $light-gray-color;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        &__text {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            color: $light-gray-color;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 14px;
+            font-weight: 500;
+            word-break: keep-all;
+            line-height: 1.3;
+            background: $light-gray-color;
+            background: -webkit-linear-gradient(#94a3b8, #94a3b800);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        &__text-opened {
+            -webkit-line-clamp: unset !important;
+            background: none !important;
+            -webkit-text-fill-color: unset;
+        }
+
+        &__button {
+            display: flex;
+            align-items: center;
+            color: $highlight-color;
+            font-size: 14px;
+            gap: 5px;
+
+            svg {
+                font-size: 16px;
+            }
+        }
+
+        &__links {
+            display: flex;
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            gap: 1rem;
+
+            a {
+                color: $secondary-color;
+                @include text-color-transition(0.15s);
+            }
+        }
+    }
+}
