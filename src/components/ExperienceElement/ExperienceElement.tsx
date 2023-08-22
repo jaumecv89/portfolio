@@ -2,21 +2,13 @@ import { useState } from "react"
 import { FaLinkedinIn } from "react-icons/fa"
 import { FiExternalLink } from "react-icons/fi"
 import {
-	MdOutlineKeyboardArrowLeft,
-	MdOutlineKeyboardArrowRight,
+    MdOutlineKeyboardArrowLeft,
+    MdOutlineKeyboardArrowRight,
 } from "react-icons/md"
-import "./ExperienceHistoryElement.scss"
+import { IJob } from "../../types/Job"
+import "./ExperienceElement.scss"
 
-interface ExperienceHistoryElementProps {
-    name: string
-    date: string
-    position: string
-    url: string
-    linkedin: string
-    text: string[]
-}
-
-const WorkHistoryElement: React.FC<ExperienceHistoryElementProps> = (props) => {
+const ExperienceElement: React.FC<IJob> = (props) => {
     const [isHovered, setHovered] = useState(false)
     const [descriptionOpened, setDescriptionOpened] = useState(false)
 
@@ -56,7 +48,7 @@ const WorkHistoryElement: React.FC<ExperienceHistoryElementProps> = (props) => {
                     {props.date}
                 </span>
                 <span className="experience-element__column-3__title">
-                    {props.name}
+                    {props.company}
                 </span>
                 <span className="experience-element__column-3__subtitle">
                     {props.position}
@@ -69,19 +61,23 @@ const WorkHistoryElement: React.FC<ExperienceHistoryElementProps> = (props) => {
                     }
                 >
                     <>
-                        {props.text.map((line, key) => {
-                            return <li key={key}>{line}</li>
-                        })}
+                        {props.text.map((line, key) => (
+                            <li key={key}>- {line}</li>
+                        ))}
                     </>
                 </div>
                 <div
                     className="experience-element__column-3__links"
                     style={!descriptionOpened ? { display: "none" } : {}}
                 >
-                    <a href={props.linkedin} target="_blank" rel="noreferrer">
+                    <a
+                        href={props.linkedinUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                    >
                         <FaLinkedinIn />
                     </a>
-                    <a href={props.url} target="_blank" rel="noreferrer">
+                    <a href={props.websiteUrl} target="_blank" rel="noreferrer">
                         <FiExternalLink />
                     </a>
                 </div>
@@ -101,4 +97,4 @@ const WorkHistoryElement: React.FC<ExperienceHistoryElementProps> = (props) => {
     )
 }
 
-export default WorkHistoryElement
+export default ExperienceElement

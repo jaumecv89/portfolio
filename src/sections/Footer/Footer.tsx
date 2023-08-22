@@ -4,7 +4,7 @@ import "./Footer.scss"
 
 const Footer = () => {
     return (
-        <div className="footer">
+        <section className="footer">
             <div className="footer__container">
                 <img src={logo} alt="Jaume Campderrós" />
                 <div className="footer__container--content">
@@ -18,7 +18,7 @@ const Footer = () => {
                     <span>Jaume Campderrós © 2022</span>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

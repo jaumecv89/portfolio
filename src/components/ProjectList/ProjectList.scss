@@ -1,0 +1,6 @@
+@use "../../abstracts" as *;
+
+.project-list {
+    @include flex-column;
+    gap: 3rem;
+}

@@ -7,7 +7,7 @@ import "./About.scss"
 
 const About = () => {
     return (
-        <div id="about" className="about">
+        <section id="about" className="about">
             <div className="about__container">
                 <TitleElement
                     title={Titles.about.title}
@@ -118,7 +118,7 @@ const About = () => {
                     <div className="about__container--content__image" />
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

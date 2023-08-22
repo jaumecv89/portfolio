@@ -12,7 +12,7 @@
         "coverage": "vitest run --coverage"
     },
     "dependencies": {
-        "eslint-config-airbnb-typescript": "^17.1.0",
+        "@apollo/client": "^3.8.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
     },
@@ -28,6 +28,7 @@
         "@vitest/ui": "^0.34.1",
         "eslint": "^8.2.0",
         "eslint-config-airbnb": "^19.0.4",
+        "eslint-config-airbnb-typescript": "^17.1.0",
         "eslint-config-prettier": "^9.0.0",
         "eslint-plugin-import": "^2.25.3",
         "eslint-plugin-jsx-a11y": "^6.5.1",
@@ -35,6 +36,7 @@
         "eslint-plugin-react": "^7.28.0",
         "eslint-plugin-react-hooks": "^4.3.0",
         "eslint-plugin-react-refresh": "^0.4.3",
+        "graphql": "^16.8.0",
         "hamburger-react": "^2.5.0",
         "jsdom": "^22.1.0",
         "prettier": "^3.0.1",

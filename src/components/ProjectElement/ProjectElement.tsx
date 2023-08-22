@@ -1,79 +1,38 @@
-import { useEffect, useState } from "react"
+import { IProject } from "../../types/Project"
 import "./ProjectElement.scss"
 
-interface ProjectElementProps {
-    position: boolean
-    links: {
-        icon: JSX.Element
-        link: string
-    }[]
-    imageUrl: string
-    title: string
-    text: string
-    techStack: string[]
-    index: number
-}
-
-const ProjectElement: React.FC<ProjectElementProps> = ({
-    position,
-    links,
-    imageUrl,
-    title,
-    text,
-    techStack,
-    index,
-}) => {
-    const [pos, setPos] = useState("")
-    const justifyContent = position ? "left" : "right"
-    const textAlign = position ? "right" : "left"
-    const alignItems = position ? "flex-end" : "flex-start"
-
-    useEffect(() => {
-        position ? setPos("right") : setPos("left")
-    }, [position])
-
+const ProjectElement: React.FC<IProject> = (props) => {
     return (
-        <div className="project-element" style={{ justifyContent }}>
+        <div className="project-element">
             <div className="project-element__image">
-                <a href={links[0].link} target="_blank" rel="noreferrer">
-                    <img src={imageUrl} alt={title} />
+                <a href={props.websiteUrl} target="_blank" rel="noreferrer">
+                    <img src={props.image.url} alt={props.title} />
                     <div className="project-element__image-overlay" />
                 </a>
             </div>
-            <div
-                className="project-element__content"
-                style={{ textAlign, alignItems, [pos]: 0 }}
-            >
-                {index === 0 && (
-                    <span className="project-element__content-subtitle">
-                        Latest Project
-                    </span>
-                )}
+            <div className="project-element__content">
                 <a
-                    href={links[0].link}
+                    href={props.websiteUrl}
                     target="_blank"
                     rel="noreferrer"
                     className="project-element__content-title"
                 >
-                    {title}
+                    {props.title}
                 </a>
-                <span className="project-element__content-text">{text}</span>
+                <span className="project-element__content-text">
+                    {props.text}
+                </span>
                 <div className="project-element__content-tech">
-                    {techStack.map((tech, index) => (
+                    {props.techStack.map((tech, index) => (
                         <span key={index}>{tech}</span>
                     ))}
                 </div>
                 <div className="project-element__content-links">
-                    {links.map((link, index) => (
-                        <a
-                            href={link.link}
-                            target="_blank"
-                            rel="noreferrer"
-                            key={index}
-                        >
-                            {link.icon}
-                        </a>
-                    ))}
+                    <a
+                        href={props.githubUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                    ></a>
                 </div>
             </div>
         </div>

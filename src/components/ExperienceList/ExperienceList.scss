@@ -1,0 +1,16 @@
+@use "../../abstracts" as *;
+
+.experience-list {
+    @include flex-column;
+    align-items: center;
+
+    &__button {
+        width: fit-content;
+        @include primary-button;
+        margin-top: 3rem;
+    }
+}
+
+.text-center {
+    text-align: center;
+}

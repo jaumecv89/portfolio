@@ -6,7 +6,7 @@ import "./Contact.scss"
 
 const Contact = () => {
     return (
-        <div id="contact" className="contact">
+        <section id="contact" className="contact">
             <div className="contact__container">
                 <TitleElement
                     title={Titles.contact.title}
@@ -60,7 +60,7 @@ const Contact = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 
