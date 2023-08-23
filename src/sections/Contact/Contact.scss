@@ -4,7 +4,7 @@
     display: flex;
     width: 100%;
     justify-content: center;
-    padding-block: 6rem;
+    padding-block: 5rem;
     @include linear-gradient-bg($primary-color, $primary-color-light);
 
     &__container {
