@@ -25,14 +25,10 @@ const ProjectElement: React.FC<IProject> = (props) => {
                             className="project-element__content--tech__item"
                         >
                             <img
-                                src={
-                                    (TechStack as any)[item.toLowerCase()]?.icon
-                                }
-                                alt={
-                                    (TechStack as any)[item.toLowerCase()]?.name
-                                }
+                                src={TechStack[item.toLowerCase()]?.icon}
+                                alt={TechStack[item.toLowerCase()]?.name}
                             />
-                            {(TechStack as any)[item.toLowerCase()]?.name}
+                            {TechStack[item.toLowerCase()]?.name}
                         </div>
                     ))}
                 </div>
