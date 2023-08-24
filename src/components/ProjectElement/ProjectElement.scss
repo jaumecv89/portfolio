@@ -9,6 +9,7 @@
     img {
         @include full-size;
         max-width: max-content;
+        box-shadow: $highlight-color-transparent
     }
 
     &__content {

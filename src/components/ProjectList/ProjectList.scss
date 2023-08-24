@@ -1,6 +1,19 @@
 @use "../../abstracts" as *;
 
 .project-list {
-    @include flex-column;
-    gap: 6rem;
+    &__container {
+        @include flex-column;
+        gap: 6rem;
+
+        &--error {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            background-color: $primary-color-dark;
+            opacity: 0.7;
+            padding: 5rem;
+            border-radius: 1rem;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+        }
+    }
 }

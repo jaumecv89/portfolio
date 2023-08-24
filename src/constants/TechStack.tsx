@@ -8,7 +8,12 @@ import vite from "../assets/Icons/icon-vite.svg"
 import vitest from "../assets/Icons/icon-vitest.svg"
 import wordpress from "../assets/Icons/icon-wordpress.svg"
 
-export const TechStack = {
+interface Tech {
+    name: string
+    icon: string
+}
+
+export const TechStack: Record<string, Tech> = {
     react: {
         name: "React",
         icon: react,
