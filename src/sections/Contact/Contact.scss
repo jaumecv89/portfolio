@@ -2,10 +2,11 @@
 
 .contact {
     display: flex;
+    position: relative;
     width: 100%;
     justify-content: center;
     padding-block: 5rem;
-    @include linear-gradient-bg($primary-color, $primary-color-light);
+    background-color: $primary-color;
 
     &__container {
         @include flex-column;
@@ -23,6 +24,7 @@
 
         &--button {
             @include primary-button;
+            padding: 0.75rem 1.5rem;
         }
 
         &--social {
@@ -42,7 +44,7 @@
                     color: $light-gray-color;
                     border: none;
                     padding: 0;
-                    font-size: 1.3rem;
+                    font-size: 1.15rem;
                     box-shadow: none;
                     transition: all ease-in 0.15s;
 

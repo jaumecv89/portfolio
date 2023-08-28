@@ -2,13 +2,41 @@
 
 .experience {
     display: flex;
+    position: relative;
     width: 100%;
     justify-content: center;
     padding-block: 5rem 3rem;
-    @include linear-gradient-bg($primary-color, $primary-color-light);
+    background-color: $primary-color;
 
     &__container {
         padding: 1rem;
+
+        &--resume {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 5rem;
+            color: $dark-gray-color;
+            text-transform: capitalize;
+            font-weight: 500;
+            gap: 0.5rem;
+
+            span {
+                position: relative;
+                @include link-underline-transition(1px, -1px);
+            }
+
+            svg {
+                font-size: 0.875rem;
+                transition: all 0.25s ease-in-out;
+            }
+
+            &:hover {
+                svg {
+                    transform: translateX(5px);
+                }
+            }
+        }
 
         @include tablet {
             max-width: $screen-tablet-min;

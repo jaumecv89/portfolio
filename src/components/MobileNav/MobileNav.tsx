@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef } from "react"
 import { FaGithub, FaLinkedinIn } from "react-icons/fa"
+import { Link } from "react-scroll"
 import { MenuItems } from "../../constants/MenuItems"
 import { SocialMedia } from "../../constants/SocialMedia"
 import "./MobileNav.scss"
@@ -47,9 +48,13 @@ const MobileNav: React.FC<MobileNavProps> = ({ setToggle }) => {
             <div className="nav__mobile--navigation">
                 {MenuItems.map((item) => (
                     <li className={item.className} key={item.key}>
-                        <a href={item.path} onClick={() => setToggle(false)}>
+                        <Link
+                            to={item.path}
+                            smooth={true}
+                            onClick={() => setToggle(false)}
+                        >
                             {item.title}
-                        </a>
+                        </Link>
                     </li>
                 ))}
                 <div className="nav__mobile--navigation__social">

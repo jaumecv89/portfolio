@@ -1,21 +1,23 @@
+import { Link } from "react-scroll"
 import logo from "../../assets/Images/jlogo.png"
 import { MenuItems } from "../../constants/MenuItems"
 import "./Footer.scss"
 
 const Footer = () => {
     return (
-        <section className="footer">
+        <section id="footer" className="footer">
             <div className="footer__container">
                 <img src={logo} alt="Jaume Campderrós" />
-                <div className="footer__container--content">
-                    <ul>
-                        {MenuItems.map((item) => (
-                            <li className={item.className} key={item.key}>
-                                <a href={item.path}>{item.title}</a>
-                            </li>
-                        ))}
-                    </ul>
-                    <span>Jaume Campderrós © 2022</span>
+                <div className="footer__container--menu">
+                    {MenuItems.map((item) => (
+                        <Link to={item.path} smooth={true} key={item.path}>
+                            {item.title}
+                        </Link>
+                    ))}
+                </div>
+                <hr />
+                <div className="footer__container--copyright">
+                    © 2023 Jaume Campderros
                 </div>
             </div>
         </section>

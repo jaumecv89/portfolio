@@ -72,48 +72,6 @@ const About = () => {
                             with Windows and Linux servers, networking, IP
                             telephony and solving day to day problems.
                         </p>
-                        <p>
-                            Here are a few technologies I've been working with
-                            recently:
-                        </p>
-                        <div className="about__container--content__text--technologies">
-                            <div className="about__container--content__text--technologies-column">
-                                <span>
-                                    <FaReact />
-                                    React
-                                </span>
-                                <span>
-                                    <FaAngular />
-                                    Angular
-                                </span>
-                                <span>
-                                    <IoLogoJavascript />
-                                    JavaScript
-                                </span>
-                                <span>
-                                    <FaSass />
-                                    Sass
-                                </span>
-                            </div>
-                            <div className="about__container--content__text--technologies-column">
-                                <span>
-                                    <SiTypescript />
-                                    TypeScript
-                                </span>
-                                <span>
-                                    <FaJava />
-                                    Java
-                                </span>
-                                <span>
-                                    <SiSpringboot />
-                                    Spring Boot
-                                </span>
-                                <span>
-                                    <FaWordpress />
-                                    WordPress
-                                </span>
-                            </div>
-                        </div>
                     </div>
                     <div className="about__container--content__image" />
                 </div>

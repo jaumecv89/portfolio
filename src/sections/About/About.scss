@@ -2,10 +2,11 @@
 
 .about {
     display: flex;
+    position: relative;
     width: 100%;
     justify-content: center;
     padding-block: 5rem 3rem;
-    @include linear-gradient-bg($primary-color-light, $primary-color);
+    background-color: $primary-color;
 
     &__container {
         padding: 1rem;
@@ -26,27 +27,6 @@
 
                 a {
                     position: relative;
-                }
-
-                &--technologies {
-                    @include flex-row;
-                    gap: 3rem;
-
-                    &-column {
-                        @include flex-column;
-                        gap: 0.5rem;
-
-                        svg {
-                            font-size: 18px;
-                            color: $highlight-color;
-                            margin-right: 1rem;
-                        }
-
-                        span {
-                            @include flex-center;
-                            font-size: 14px;
-                        }
-                    }
                 }
             }
 

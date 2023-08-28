@@ -2,76 +2,52 @@
 
 .hero {
     display: flex;
+    position: sticky;
     width: 100%;
     height: 100vh;
     justify-content: center;
-    @include linear-gradient-bg($primary-color, $primary-color-light);
+    align-items: center;
+    inset: 0;
+    background-color: $primary-color;
 
     &__container {
-        @include flex-column;
-        align-items: center;
+        display: flex;
         justify-content: center;
         padding: 1rem;
         gap: 2rem;
 
         &--content {
             @include flex-column;
-            width: 100%;
             color: $secondary-color;
-            font-weight: 400;
-            line-height: 1.1;
             text-align: center;
             align-items: center;
-            gap: 2rem;
-
-            span {
-                color: $highlight-color;
-                font-weight: 600;
-            }
+            gap: 1.5rem;
 
             &__button {
+                @include secondary-button;
                 width: fit-content;
-                border: 2px solid $highlight-color;
-                border-radius: 0.5rem;
-                color: white;
-                background: transparent;
-                font: 600 1rem $font-base;
-                padding: 0.75rem 1.25rem;
-                cursor: pointer;
-                transition: all 0.3s ease-in-out;
-                user-select: none;
-
-                &:hover {
-                    background: $highlight-color;
-                }
+                font-size: 1rem;
+                font-weight: 500;
+                padding: 1rem 1.5rem;
+                margin-top: 2rem;
 
                 @include tablet {
-                    font: 600 1.1rem/1 $font-base;
-                    padding: 1rem 1.5rem;
+                    padding: 1.25rem 2.1rem;
+                    font-size: 1.15rem;
                 }
             }
 
-            @include tablet {
-                text-align: left;
-                align-items: normal;
+            span {
+                color: $secondary-color;;
             }
-        }
 
-        &--image {
-            img {
-                width: 10rem;
-                border-radius: 50%;
-
-                @include tablet {
-                    width: 20rem;
-                }
+            @include desktop {
+                width: 80%;
             }
         }
 
         @include tablet {
-            flex-direction: row;
             max-width: $screen-tablet-min;
-            gap: 3rem;
         }
 
         @include desktop {
