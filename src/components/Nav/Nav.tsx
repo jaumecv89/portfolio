@@ -1,17 +1,20 @@
 import { Twirl as Hamburger } from "hamburger-react"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Link } from "react-scroll"
 import { MenuItems } from "../../constants/MenuItems"
 import MobileNav from "../MobileNav/MobileNav"
 import "./Nav.scss"
 
 const Nav = () => {
+    const burgerMenuRef = useRef<HTMLDivElement>(null)
     const [toggle, setToggle] = useState(false)
     const [visible, setVisible] = useState(false)
 
     const toggleVisible = () => {
         const scrolled = document.documentElement.scrollTop
-        scrolled > window.innerHeight ? setVisible(true) : setVisible(false)
+        scrolled > window.innerHeight - 50
+            ? setVisible(true)
+            : setVisible(false)
     }
 
     window.addEventListener("scroll", toggleVisible)
@@ -21,6 +24,7 @@ const Nav = () => {
             top: 0,
             behavior: "smooth",
         })
+        setToggle(false)
     }
 
     useEffect(() => {
@@ -42,7 +46,12 @@ const Nav = () => {
                     : {}
             }
         >
-            {toggle && <MobileNav setToggle={setToggle} />}
+            {toggle && (
+                <MobileNav
+                    setToggle={setToggle}
+                    burgerMenuRef={burgerMenuRef}
+                />
+            )}
             <div className="nav__container">
                 <div className="nav__container--menu">
                     <Link to={MenuItems[0].path} smooth={true}>
@@ -73,7 +82,7 @@ const Nav = () => {
                         Hit me up
                     </Link>
                 </div>
-                <div className="nav__container--burger">
+                <div className="nav__container--burger" ref={burgerMenuRef}>
                     <Hamburger
                         toggled={toggle}
                         toggle={setToggle}

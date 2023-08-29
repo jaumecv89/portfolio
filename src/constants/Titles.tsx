@@ -1,18 +1,18 @@
 export const Titles = {
 	about: {
-		title: "About me",
-		subtitle: "A piece of my story.",
+		title: "My story",
+		subtitle: "About",
 	},
 	contact: {
-		title: "Get in touch",
-		subtitle: "What's next?",
+		title: "Got a problem to solve?",
+		subtitle: "Contact",
 	},
 	experience: {
 		title: "My working history",
-		subtitle: "Here's a brief rundown of my most recent experiences.",
+		subtitle: "Experience",
 	},
 	work: {
 		title: "Some things I've built",
-		subtitle: "A selection of my personal projects.",
+		subtitle: "Work",
 	},
 };

@@ -1,7 +1,7 @@
 import { Link } from "react-scroll"
+import aboutImg from "../../assets/Images/about_image.jpg"
 import TitleElement from "../../components/TitleElement/TitleElement"
 import { Titles } from "../../constants/Titles"
-import aboutImg from "../../assets/Images/about_image.jpg"
 import "./About.scss"
 
 const About = () => {
@@ -21,15 +21,15 @@ const About = () => {
                                 subtitle={Titles.about.subtitle}
                             />
                             <p>
-                                Hello! I'm Jaume, a full stack developer and
-                                software engineer who recently focused in
-                                front-end development. My mission is to
-                                translate user-focussed designs into websites or
-                                applications that run blazing fast.
+                                Hello! I'm Jaume. A full stack developer and
+                                software engineer with expertise primarily
+                                focused in front-end development. My life's
+                                mission is to transform user-focused designs
+                                into websites or applications that run blazing
+                                fast.
                             </p>
                             <p>
-                                My interest in web development started back in
-                                2020 when I finished my university degree in the{" "}
+                                I completed my university degree at the{" "}
                                 <a
                                     href="https://www.ub.edu/web/portal/en/"
                                     target="_blank"
@@ -37,11 +37,9 @@ const About = () => {
                                     className="about__link"
                                 >
                                     University of Barcelona
-                                </a>
-                                .
-                            </p>
-                            <p>
-                                I'm currently working as a software engineer at{" "}
+                                </a>{" "}
+                                in 2020. Currently, I'm working as a software
+                                engineer at{" "}
                                 <a
                                     href="https://www.quantion.com/en/"
                                     target="_blank"
@@ -49,12 +47,12 @@ const About = () => {
                                     className="about__link"
                                 >
                                     Quantion
-                                </a>{" "}
-                                where I help develop different customer oriented
-                                solutions with my web development experience.
+                                </a>
+                                , contributing my web development experience to
+                                craft various customer-centric solutions.
                             </p>
                             <p>
-                                Prior to Quantion, I worked as a software
+                                Before joining Quantion, I served as a software
                                 engineer at{" "}
                                 <a
                                     href="https://www.gi-de.com/en/"
@@ -63,20 +61,25 @@ const About = () => {
                                     className="about__link"
                                 >
                                     G+D Mobile Security
-                                </a>{" "}
-                                where I helped to develop full-stack RESTful
-                                microservices. Take a closer look at my{" "}
+                                </a>
+                                , contributing to the development of full-stack
+                                RESTful microservices and client-oriented
+                                products.
+                            </p>
+                            <p>
+                                Previously, I held the role of a system and
+                                network administrator for several years. During
+                                this time, I managed Windows and Linux servers,
+                                handled networking tasks, oversaw IP telephony,
+                                and adeptly resolved day-to-day challenges to
+                                ensure smooth operations.
+                            </p>
+                            <p>
+                                Have a closer look at my{" "}
                                 <Link to="experience" smooth={true}>
                                     working history
                                 </Link>
                                 .
-                            </p>
-                            <p>
-                                In a past life, I was a system and network
-                                administrator for several years, where I was
-                                working with Windows and Linux servers,
-                                networking, IP telephony and solving day to day
-                                problems.
                             </p>
                         </div>
                     </div>

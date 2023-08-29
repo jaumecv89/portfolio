@@ -27,7 +27,10 @@ const ExperienceElement: React.FC<IJob> = (props) => {
                 className="experience-element__column-3"
                 style={
                     isHovered
-                        ? { backgroundColor: "rgba(136, 136, 136, 0.075)" }
+                        ? {
+                              backgroundColor: "rgba(136, 136, 136, 0.075)",
+                              border: "1px solid rgb(56, 66, 95)",
+                          }
                         : {}
                 }
                 onMouseEnter={() => setHovered(true)}
@@ -36,9 +39,14 @@ const ExperienceElement: React.FC<IJob> = (props) => {
                 <span className="experience-element__column-3__date">
                     {props.date}
                 </span>
-                <span className="experience-element__column-3__title">
+                <a
+                    href={props.websiteUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="experience-element__column-3__title"
+                >
                     {props.position} · {props.company}
-                </span>
+                </a>
                 <p>{props.description}</p>
                 {props.technologies.length > 0 && (
                     <ul>
