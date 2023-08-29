@@ -6,7 +6,7 @@
     position: fixed;
     justify-content: center;
     transition: all 0.25s ease-in-out;
-    z-index: 10;
+    z-index: 3;
 
     &__container {
         @include flex-center;
@@ -53,6 +53,7 @@
                 letter-spacing: -1px;
                 gap: 0.25rem;
                 cursor: pointer;
+                z-index: 20;
 
                 span:nth-child(1) {
                     font-weight: 600;

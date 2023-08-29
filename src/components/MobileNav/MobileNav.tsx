@@ -7,9 +7,10 @@ import "./MobileNav.scss"
 
 interface MobileNavProps {
     setToggle: React.Dispatch<React.SetStateAction<boolean>>
+    burgerMenuRef: React.RefObject<HTMLDivElement>
 }
 
-const MobileNav: React.FC<MobileNavProps> = ({ setToggle }) => {
+const MobileNav: React.FC<MobileNavProps> = ({ setToggle, burgerMenuRef }) => {
     const mobileMenuRef = useRef<HTMLDivElement>(null)
 
     const escFunction = useCallback((event: any) => {
@@ -28,24 +29,28 @@ const MobileNav: React.FC<MobileNavProps> = ({ setToggle }) => {
     useEffect(() => {
         const listener = (event: any) => {
             if (
-                !mobileMenuRef.current ||
-                mobileMenuRef.current.contains(event.target)
+                mobileMenuRef.current &&
+                burgerMenuRef.current &&
+                !mobileMenuRef.current.contains(event.target) &&
+                !burgerMenuRef.current.contains(event.target)
             ) {
                 setToggle(false)
             }
         }
+
         document.addEventListener("mousedown", listener)
         document.addEventListener("touchstart", listener)
+
         return () => {
             document.removeEventListener("mousedown", listener)
             document.removeEventListener("touchstart", listener)
         }
-    }, [mobileMenuRef])
+    }, [])
 
     return (
         <>
-            <div className="nav__mobile--overlay" ref={mobileMenuRef} />
-            <div className="nav__mobile--navigation">
+            <div className="nav__mobile--overlay" />
+            <div className="nav__mobile--navigation" ref={mobileMenuRef}>
                 {MenuItems.map((item) => (
                     <li className={item.className} key={item.key}>
                         <Link
@@ -57,6 +62,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ setToggle }) => {
                         </Link>
                     </li>
                 ))}
+                <hr />
                 <div className="nav__mobile--navigation__social">
                     Social media
                     <div className="nav__mobile--navigation__social--icons">
