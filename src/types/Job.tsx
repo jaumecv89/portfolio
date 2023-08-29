@@ -3,8 +3,8 @@ export interface IJob {
     date: string
     position: string
     websiteUrl: string
-    linkedinUrl: string
-    text: string[]
+    description: string
+    technologies: string[]
 }
 
 export interface IJobs {

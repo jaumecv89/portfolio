@@ -8,8 +8,8 @@ interface TitleElementProps {
 const TitleElement: React.FC<TitleElementProps> = ({ title, subtitle }) => {
     return (
         <div className="title-element">
-            <span className="title-element__title">{title}</span>
-            <span className="title-element__subtitle">{subtitle}</span>
+            <h2>{title}</h2>
+            <h3>{subtitle}</h3>
         </div>
     )
 }

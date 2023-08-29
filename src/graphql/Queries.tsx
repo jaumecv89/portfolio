@@ -9,8 +9,8 @@ export const GET_JOBS_QUERY = gql`
             date
             position
             websiteUrl
-            linkedinUrl
-            text
+            description
+            technologies
         }
     }
 `

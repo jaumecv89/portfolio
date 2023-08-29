@@ -1,14 +1,27 @@
 import { Twirl as Hamburger } from "hamburger-react"
 import { useEffect, useState } from "react"
-import { FaGithub, FaLinkedinIn } from "react-icons/fa"
-import logo from "../../assets/Images/jlogo.png"
+import { Link } from "react-scroll"
 import { MenuItems } from "../../constants/MenuItems"
-import { SocialMedia } from "../../constants/SocialMedia"
 import MobileNav from "../MobileNav/MobileNav"
 import "./Nav.scss"
 
 const Nav = () => {
     const [toggle, setToggle] = useState(false)
+    const [visible, setVisible] = useState(false)
+
+    const toggleVisible = () => {
+        const scrolled = document.documentElement.scrollTop
+        scrolled > window.innerHeight ? setVisible(true) : setVisible(false)
+    }
+
+    window.addEventListener("scroll", toggleVisible)
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        })
+    }
 
     useEffect(() => {
         toggle
@@ -17,29 +30,48 @@ const Nav = () => {
     }, [toggle])
 
     return (
-        <div className="nav">
+        <div
+            className="nav"
+            style={
+                visible
+                    ? {
+                          backgroundColor: "#06091880",
+                          backdropFilter: "blur(12px)",
+                          borderBottom: "0.5px solid rgb(46 54 79/1)",
+                      }
+                    : {}
+            }
+        >
             {toggle && <MobileNav setToggle={setToggle} />}
             <div className="nav__container">
-                <div className="nav__container--logo">
-                    <img src={logo} alt="Jaume Campderrós" />
-                    <span>Jaume Campderrós</span>
-                </div>
                 <div className="nav__container--menu">
-                    <ul className="nav__container--menu__left">
-                        {MenuItems.map((item) => (
-                            <li key={item.key}>
-                                <a href={item.path}>{item.title}</a>
-                            </li>
-                        ))}
-                    </ul>
-                    <div className="nav__container--menu__right">
-                        <a href={SocialMedia.linkedin}>
-                            <FaLinkedinIn />
-                        </a>
-                        <a href={SocialMedia.github}>
-                            <FaGithub />
-                        </a>
-                    </div>
+                    <Link to={MenuItems[0].path} smooth={true}>
+                        {MenuItems[0].title}
+                    </Link>
+                    <Link to={MenuItems[1].path} smooth={true}>
+                        {MenuItems[1].title}
+                    </Link>
+                    <Link to={MenuItems[2].path} smooth={true}>
+                        {MenuItems[2].title}
+                    </Link>
+                </div>
+                <div className="nav__container--logo">
+                    <a
+                        onClick={scrollToTop}
+                        className="nav__container--logo__link"
+                    >
+                        <span>Jaume</span>
+                        <span>Campderros</span>
+                    </a>
+                </div>
+                <div className="nav__container--contact">
+                    <Link
+                        to="contact"
+                        smooth={true}
+                        className="nav__container--contact__link"
+                    >
+                        Hit me up
+                    </Link>
                 </div>
                 <div className="nav__container--burger">
                     <Hamburger

@@ -16,7 +16,7 @@ const ProjectFilter: React.FC<ProjectFilterProps> = ({
 }) => {
     const dropdownRef = useRef<HTMLDivElement>(null)
 
-    const techStack: string[] = Object.keys(TechStack)
+    const techStack: string[] = []
     const [techStackSelect, setTechStackSelect] = useState<string[]>(techStack)
     const [techStackFilter, setTechStackFilter] = useState<string[]>([])
     const [techListOpen, setTechListOpen] = useState(false)
@@ -59,6 +59,17 @@ const ProjectFilter: React.FC<ProjectFilterProps> = ({
     }
 
     useEffect(() => {
+        projects.filter((project) => {
+            project.techStack.forEach((tech) => {
+                const techTransformed = tech.replace(" ", "").toLowerCase()
+                if (!techStack.includes(techTransformed)) {
+                    techStack.push(techTransformed)
+                }
+            })
+        })
+    }, [techStack])
+
+    useEffect(() => {
         const filtered = projects.filter(
             (project) =>
                 techStackFilter.length === 0 ||
@@ -80,22 +91,27 @@ const ProjectFilter: React.FC<ProjectFilterProps> = ({
 
     return (
         <div className="project-filter">
-            <div
-                className="project-filter__button"
-                onClick={resetFilters}
-                style={{ opacity: techStackFilter.length === 0 ? "1" : "" }}
-            >
-                All projects
-            </div>
+            {techStackFilter.length > 0 && (
+                <div className="project-filter__button" onClick={resetFilters}>
+                    Clear filters
+                    <VscClose />
+                </div>
+            )}
             {techStackSelect.length > 0 && (
                 <div className="project-filter__select" ref={dropdownRef}>
-                    <div
-                        className="project-filter__button"
-                        onClick={() => setTechListOpen(!techListOpen)}
-                        style={{ opacity: techListOpen ? "1" : "" }}
-                    >
-                        Filter by technology
-                        {techListOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}
+                    <div className="project-filter__button-dropdown">
+                        <div
+                            className="project-filter__button"
+                            onClick={() => setTechListOpen(!techListOpen)}
+                            style={{ opacity: techListOpen ? "1" : "" }}
+                        >
+                            Filter by technology
+                            {techListOpen ? (
+                                <IoIosArrowUp />
+                            ) : (
+                                <IoIosArrowDown />
+                            )}
+                        </div>
                     </div>
                     {techListOpen && (
                         <div className="project-filter__select--list">
