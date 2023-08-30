@@ -45,12 +45,12 @@ const Hero = () => {
             <div className="hero__container">
                 <div className="hero__container--content">
                     <h1 ref={followMouseTextRef}>
-                        Pioneering the Future with Lines of Code
+                        Shaping Ideas through Code Innovation
                     </h1>
                     <p>
-                        I'm a software engineer who's passionate about{" "}
-                        <span>designing</span> and <span>developing</span>{" "}
-                        products for the utmost seamless user experience.
+                        I'm a software engineer who's passionate about designing
+                        and developing products for the utmost seamless user
+                        experience.
                     </p>
                     <Link
                         to="work"

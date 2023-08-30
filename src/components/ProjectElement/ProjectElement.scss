@@ -4,12 +4,10 @@
     @include flex-column;
     align-items: center;
     justify-content: center;
-    gap: 3rem;
 
     img {
         @include full-size;
         max-width: 700PX;
-        box-shadow: $highlight-color-transparent;
     }
 
     &__content {
@@ -75,5 +73,7 @@
 
     @include desktop {
         flex-direction: row;
+        align-items: normal;
+        gap: 1rem;
     }
 }
