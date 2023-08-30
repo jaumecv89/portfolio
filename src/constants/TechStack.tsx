@@ -54,10 +54,6 @@ export const TechStack: Record<string, Tech> = {
         name: "GraphQL",
         icon: graphql,
     },
-    sass: {
-        name: "Sass",
-        icon: sass,
-    },
     wordpress: {
         name: "WordPress",
         icon: wordpress,
