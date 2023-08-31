@@ -55,10 +55,7 @@ const ExperienceElement: React.FC<IJob> = (props) => {
                                 TechStack[tech.toLowerCase().replace(" ", "")]
                             return (
                                 <li key={tech}>
-                                    <img
-                                        src={techData.icon}
-                                        alt={techData.name}
-                                    />
+                                    <img src={techData.icon} alt="" />
                                     {techData.name}
                                 </li>
                             )
