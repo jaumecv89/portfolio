@@ -88,6 +88,7 @@ const Nav = () => {
                         toggle={setToggle}
                         color="#ffff"
                         duration={0.5}
+                        aria-label="Menu"
                     />
                 </div>
             </div>
