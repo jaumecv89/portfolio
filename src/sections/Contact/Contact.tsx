@@ -33,6 +33,7 @@ const Contact = () => {
                             href={SocialMedia.linkedin}
                             target="_blank"
                             rel="noreferrer"
+                            aria-label="Linkedin"
                         >
                             <FaLinkedinIn />
                         </a>
@@ -40,6 +41,7 @@ const Contact = () => {
                             href={SocialMedia.github}
                             target="_blank"
                             rel="noreferrer"
+                            aria-label="Github"
                         >
                             <FaGithub />
                         </a>
@@ -47,6 +49,7 @@ const Contact = () => {
                             href={SocialMedia.instagram}
                             target="_blank"
                             rel="noreferrer"
+                            aria-label="Instagram"
                         >
                             <FaInstagram />
                         </a>
@@ -54,6 +57,7 @@ const Contact = () => {
                             href={SocialMedia.facebook}
                             target="_blank"
                             rel="noreferrer"
+                            aria-label="Facebook"
                         >
                             <FaFacebook />
                         </a>
