@@ -30,19 +30,6 @@ h1 {
 }
 
 h2 {
-    color: $secondary-color;
-    font-size: 1.875rem;
-    font-weight: 700;
-    line-height: 1.25;
-    text-align: center;
-
-    @include custom(768px) {
-        font-size: 3rem;
-        line-height: 1;
-    }
-}
-
-h3 {
     font-size: 0.875rem;
     line-height: 1.25rem;
     font-weight: 500;
@@ -52,6 +39,19 @@ h3 {
     @include custom(768px) {
         font-size: 1.125rem;
         line-height: 1.75rem;
+    }
+}
+
+h3 {
+    color: $secondary-color;
+    font-size: 1.875rem;
+    font-weight: 700;
+    line-height: 1.25;
+    text-align: center;
+
+    @include custom(768px) {
+        font-size: 3rem;
+        line-height: 1;
     }
 }
 

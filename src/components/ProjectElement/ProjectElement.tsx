@@ -26,7 +26,7 @@ const ProjectElement: React.FC<IProject> = (props) => {
                         >
                             <img
                                 src={TechStack[item.toLowerCase()]?.icon}
-                                alt={TechStack[item.toLowerCase()]?.name}
+                                alt=""
                             />
                             {TechStack[item.toLowerCase()]?.name}
                         </div>
