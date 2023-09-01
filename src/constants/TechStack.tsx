@@ -23,6 +23,12 @@ import typescript from "../assets/Icons/icon-typescript.svg"
 import vite from "../assets/Icons/icon-vite.svg"
 import vitest from "../assets/Icons/icon-vitest.svg"
 import wordpress from "../assets/Icons/icon-wordpress.svg"
+import jasmineicon from "../assets/Icons/icon-jasmine.svg"
+import jenkinsicon from "../assets/Icons/icon-jenkins.svg"
+import jiraicon from "../assets/Icons/icon-jira.svg"
+import juniticon from "../assets/Icons/icon-junit.svg"
+import karmaicon from "../assets/Icons/icon-karma.svg"
+import sonarqubeicon from "../assets/Icons/icon-sonarqube.svg"
 
 interface Tech {
     name: string
@@ -129,5 +135,29 @@ export const TechStack: Record<string, Tech> = {
     scss: {
         name: "SCSS",
         icon: sass,
+    },
+    jasmine: {
+        name: "Jasmine",
+        icon: jasmineicon,
+    },
+    jenkins: {
+        name: "Jenkins",
+        icon: jenkinsicon,
+    },
+    jira: {
+        name: "Jira",
+        icon: jiraicon,
+    },
+    junit: {
+        name: "JUnit",
+        icon: juniticon,
+    },
+    karma: {
+        name: "Karma",
+        icon: karmaicon,
+    },
+    sonarqube: {
+        name: "SonarQube",
+        icon: sonarqubeicon,
     },
 }
