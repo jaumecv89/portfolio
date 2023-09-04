@@ -1,21 +1,11 @@
 import emailjs from "@emailjs/browser"
-import { FormEvent, useRef, useState } from "react"
+import { FormEvent } from "react"
 import { BiSolidErrorCircle } from "react-icons/bi"
+import { ToastContainer, toast } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 import "./ContactForm.scss"
 
 const ContactForm = () => {
-    const resultMessage = useRef<HTMLSpanElement>(null)
-
-    const [error, setError] = useState(false)
-    const [alert, setAlert] = useState(false)
-
-    const handleAlerts = () => {
-        setAlert(true)
-        setTimeout(() => {
-            setAlert(false)
-        }, 5000)
-    }
-
     const sendEmail = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         emailjs
@@ -26,14 +16,28 @@ const ContactForm = () => {
                 import.meta.env.VITE_PUBLIC_KEY
             )
             .then(
-                () => {
-                    setError(false)
-                    handleAlerts()
-                },
-                () => {
-                    setError(true)
-                    handleAlerts()
-                }
+                () =>
+                    toast.success("Message sent successfully!", {
+                        position: "bottom-right",
+                        autoClose: 4000,
+                        hideProgressBar: true,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "dark",
+                    }),
+                () =>
+                    toast.error("There was an error sending the message.", {
+                        position: "bottom-right",
+                        autoClose: 4000,
+                        hideProgressBar: true,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "dark",
+                    })
             )
         e.currentTarget.reset()
     }
@@ -83,16 +87,7 @@ const ContactForm = () => {
             <button type="submit" className="form__button">
                 Say hello!
             </button>
-            {alert && (
-                <span
-                    ref={resultMessage}
-                    style={{ color: error ? "rgb(255 46 91/1)" : "#428959" }}
-                >
-                    {error
-                        ? "There was an error sending the message."
-                        : "Message sent successfully!"}
-                </span>
-            )}
+            <ToastContainer />
         </form>
     )
 }
