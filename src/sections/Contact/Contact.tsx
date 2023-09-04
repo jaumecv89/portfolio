@@ -1,4 +1,5 @@
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedinIn } from "react-icons/fa"
+import ContactForm from "../../components/ContactForm/ContactForm"
 import TitleElement from "../../components/TitleElement/TitleElement"
 import { SocialMedia } from "../../constants/SocialMedia"
 import { Titles } from "../../constants/Titles"
@@ -18,12 +19,7 @@ const Contact = () => {
                     question or just want to say hi, I'll try my best to get
                     back to you!
                 </div>
-                <a
-                    href="mailto:jaume.cvila@gmail.com"
-                    className="contact__container--button"
-                >
-                    Say hello!
-                </a>
+                <ContactForm />
                 <div className="contact__container--social">
                     <span>
                         You can also contact me through social networks.

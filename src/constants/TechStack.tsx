@@ -29,6 +29,8 @@ import jiraicon from "../assets/Icons/icon-jira.svg"
 import juniticon from "../assets/Icons/icon-junit.svg"
 import karmaicon from "../assets/Icons/icon-karma.svg"
 import sonarqubeicon from "../assets/Icons/icon-sonarqube.svg"
+import vercelicon from "../assets/Icons/icon-vercel.svg"
+import confluenceicon from "../assets/Icons/icon-confluence.svg"
 
 interface Tech {
     name: string
@@ -159,5 +161,13 @@ export const TechStack: Record<string, Tech> = {
     sonarqube: {
         name: "SonarQube",
         icon: sonarqubeicon,
+    },
+    vercel: {
+        name: "Vercel",
+        icon: vercelicon,
+    },
+    confluence: {
+        name: "Confluence",
+        icon: confluenceicon,
     },
 }

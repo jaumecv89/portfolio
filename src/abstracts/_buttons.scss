@@ -10,6 +10,8 @@
     border: 1px solid $secondary-color;
     transition: 0.5s ease-in-out;
     transition-property: background-position, border, color;
+    font-family: inherit;
+    font-weight: inherit;
     position: relative;
     cursor: pointer;
     z-index: 1;

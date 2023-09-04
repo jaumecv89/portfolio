@@ -1,0 +1,74 @@
+@use "../../abstracts" as *;
+
+.form {
+    @include flex-column;
+    width: 100%;
+    gap: 1.5rem;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    &__input-block {
+        @include flex-column;
+        width: 100%;
+        gap: 0.5rem;
+    }
+
+    &__input {
+        padding: 0.75rem;
+        background-color: $primary-color-dark;
+        border: 1px solid rgb(46 54 79/1);
+        border-radius: 0.125rem;
+        font-family: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+        color: $secondary-color;
+
+        &:focus {
+            outline: none;
+            border-color: $highlight-color;
+        }
+    }
+
+    &__error {
+        align-items: center;
+        color: rgb(255 46 91/1);
+        font-size: 0.875rem;
+        line-height: 1;
+        gap: 0.5rem;
+        display: none;
+
+        svg {
+            font-size: 1.15rem;
+        }
+    }
+
+    &__button {
+        @include primary-button;
+        padding: 0.75rem 1.5rem;
+        width: fit-content;
+        font-size: 1rem;
+    }
+
+    textarea {
+        resize: vertical;
+    }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+        -webkit-text-fill-color: $secondary-color;
+        -webkit-box-shadow: 0 0 0px 30px $primary-color-dark inset;
+    }
+
+    input:not(:focus):not(:placeholder-shown):invalid,
+    textarea:not(:focus):not(:placeholder-shown):invalid {
+        border-color: rgb(255 46 91/1);
+    }
+
+    input:not(:focus):not(:placeholder-shown):invalid ~ &__error,
+    textarea:not(:focus):not(:placeholder-shown):invalid ~ &__error {
+        display: flex;
+    }
+}
