@@ -9,12 +9,15 @@
     background-color: $primary-color;
 
     &__container {
+        display: flex;
+        flex-direction: column;
         padding: 1rem;
+        align-items: center;
 
         &--resume {
             display: flex;
             align-items: center;
-            justify-content: center;
+            width: fit-content;
             margin-top: 5rem;
             color: $dark-gray-color;
             text-transform: capitalize;
