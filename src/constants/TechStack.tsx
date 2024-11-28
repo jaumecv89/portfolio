@@ -31,6 +31,9 @@ import karmaicon from "../assets/Icons/icon-karma.svg"
 import sonarqubeicon from "../assets/Icons/icon-sonarqube.svg"
 import vercelicon from "../assets/Icons/icon-vercel.svg"
 import confluenceicon from "../assets/Icons/icon-confluence.svg"
+import supabase from "../assets/Icons/icon-supabase.svg"
+import zustand from "../assets/Icons/icon-zustand.svg"
+import shadcn from "../assets/Icons/icon-shadcn.svg"
 
 interface Tech {
     name: string
@@ -169,5 +172,17 @@ export const TechStack: Record<string, Tech> = {
     confluence: {
         name: "Confluence",
         icon: confluenceicon,
+    },
+    supabase: {
+        name: "Supabase",
+        icon: supabase,
+    },
+    shadcn: {
+        name: "Shadcn",
+        icon: shadcn,
+    },
+    zustand: {
+        name: "Zustand",
+        icon: zustand,
     },
 }
