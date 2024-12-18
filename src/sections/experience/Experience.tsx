@@ -1,5 +1,5 @@
 import { AiOutlineArrowRight } from "react-icons/ai"
-import resume from "../../assets/Documents/resume.pdf"
+import resume from "../../assets/documents/resume.pdf"
 import ExperienceList from "../../components/experience-list/ExperienceList"
 import TitleElement from "../../components/title-element/TitleElement"
 import { Titles } from "../../constants/titles"

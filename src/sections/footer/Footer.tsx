@@ -1,5 +1,5 @@
 import { Link } from "react-scroll"
-import logo from "../../assets/Images/jlogo.png"
+import logo from "../../assets/images/jlogo.png"
 import { MenuItems } from "../../constants/menuItems"
 import "./Footer.scss"
 

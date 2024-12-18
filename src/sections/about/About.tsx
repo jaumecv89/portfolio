@@ -1,4 +1,4 @@
-import aboutImg from "../../assets/Images/about_image.jpg"
+import aboutImg from "../../assets/images/about_image.jpg"
 import TitleElement from "../../components/title-element/TitleElement"
 import { Titles } from "../../constants/titles"
 import "./About.scss"
