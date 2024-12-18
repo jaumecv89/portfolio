@@ -1,84 +1,84 @@
 @use "../../abstracts" as *;
 
 .about {
-    display: flex;
-    position: relative;
-    justify-content: center;
-    background-color: $primary-color;
+	display: flex;
+	position: relative;
+	justify-content: center;
+	background-color: $primary-color;
 
-    &__wrapper {
-        @include flex-column;
-        width: 100%;
-        min-height: 100svh;
-        align-items: center;
-        position: relative;
+	&__content {
+		@include flex-column;
+		width: 100%;
+		min-height: 100svh;
+		align-items: center;
+		position: relative;
 
-        &--image {
-            display: block;
-            width: 100%;
-            height: auto;
-            inset: 0px;
-            max-width: 100%;
-            max-height: 100svh;
-            object-fit: cover;
-            object-position: center right;
+		@include tablet {
+			flex-direction: row;
+		}
+	}
 
-            @include tablet {
-                width: 50%;
-                height: 100%;
-                position: absolute;
-            }
-        }
+	&__image {
+		display: block;
+		width: 100%;
+		height: auto;
+		inset: 0px;
+		max-width: 100%;
+		max-height: 100svh;
+		object-fit: cover;
+		object-position: center right;
 
-        &--container {
-            display: flex;
-            padding-inline: 1rem;
-            margin-left: auto;
-            margin-right: auto;
+		@include tablet {
+			width: 50%;
+			height: 100%;
+			position: absolute;
+		}
+	}
 
-            &__wrapper {
-                display: flex;
-                width: 100%;
+	&__text-container {
+		display: flex;
+		padding-inline: 1rem;
+		margin-left: auto;
+		margin-right: auto;
 
-                &--content {
-                    padding-top: 5rem;
-                    margin-left: auto;
+		@include tablet {
+			max-width: $screen-tablet-min;
+		}
 
-                    p {
-                        margin-bottom: 1rem;
-                    }
+		@include desktop {
+			max-width: $screen-desktop-min;
+		}
+	}
 
-                    a {
-                        @include link-underline-transition(1px, -1px);
-                        display: inline-flex;
-                        position: relative;
-                        color: $highlight-color;
-                        cursor: pointer;
-                    }
+	&__text-wrapper {
+		display: flex;
+		width: 100%;
+	}
 
-                    @include tablet {
-                        padding-left: 2.5rem;
-                        padding-top: 0;
-                        flex-basis: 50%;
-                    }
+	&__text-content {
+		padding-top: 5rem;
+		margin-left: auto;
 
-                    @include desktop {
-                        padding-left: 5rem;
-                    }
-                }
-            }
+		p {
+			margin-bottom: 1rem;
+		}
 
-            @include tablet {
-                max-width: $screen-tablet-min;
-            }
+		@include tablet {
+			padding-left: 2.5rem;
+			padding-top: 0;
+			flex-basis: 50%;
+		}
 
-            @include desktop {
-                max-width: $screen-desktop-min;
-            }
-        }
+		@include desktop {
+			padding-left: 5rem;
+		}
+	}
 
-        @include tablet {
-            flex-direction: row;
-        }
-    }
+	&__link {
+		@include link-underline-transition(1px, 1px);
+		display: inline-flex;
+		position: relative;
+		color: $highlight-color;
+		cursor: pointer;
+	}
 }

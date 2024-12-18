@@ -3,60 +3,74 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    text-decoration: none;
-    list-style: none;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	list-style: none;
 }
 
 body {
-    overflow: hidden;
-    font-family: $font-base;
+	overflow: hidden;
+	font-family: $font-base;
+}
+
+button {
+	all: unset;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	border: none;
+	background: none;
+	font: inherit;
+	color: inherit;
+	text-align: inherit;
+	text-decoration: none;
+	cursor: pointer;
 }
 
 h1 {
-    font-size: 3rem;
-    line-height: 1.25;
-    font-weight: 700;
+	font-size: 3rem;
+	line-height: 1.25;
+	font-weight: 700;
 
-    @include custom(768px) {
-        font-size: 72px;
-    }
+	@include custom(768px) {
+		font-size: 72px;
+	}
 
-    @include custom(1024px) {
-        font-size: 96px;
-    }
+	@include custom(1024px) {
+		font-size: 96px;
+	}
 }
 
 h2 {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    font-weight: 500;
-    color: $highlight-color;
-    text-align: center;
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	font-weight: 500;
+	color: $highlight-color;
+	text-align: center;
 
-    @include custom(768px) {
-        font-size: 1.125rem;
-        line-height: 1.75rem;
-    }
+	@include custom(768px) {
+		font-size: 1.125rem;
+		line-height: 1.75rem;
+	}
 }
 
 h3 {
-    color: $secondary-color;
-    font-size: 1.875rem;
-    font-weight: 700;
-    line-height: 1.25;
-    text-align: center;
+	color: $secondary-color;
+	font-size: 1.875rem;
+	font-weight: 700;
+	line-height: 1.25;
+	text-align: center;
 
-    @include custom(768px) {
-        font-size: 3rem;
-        line-height: 1;
-    }
+	@include custom(768px) {
+		font-size: 3rem;
+		line-height: 1;
+	}
 }
 
 p {
-    font-size: 1rem;
-    color: $light-gray-color;
-    line-height: 1.625;
+	font-size: 1rem;
+	color: $light-gray-color;
+	line-height: 1.625;
 }

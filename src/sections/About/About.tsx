@@ -1,92 +1,97 @@
-import { Link } from "react-scroll"
 import aboutImg from "../../assets/Images/about_image.jpg"
-import TitleElement from "../../components/TitleElement/TitleElement"
-import { Titles } from "../../constants/Titles"
+import TitleElement from "../../components/title-element/TitleElement"
+import { Titles } from "../../constants/titles"
 import "./About.scss"
 
 const About = () => {
-    return (
-        <section id="about" className="about">
-            <div className="about__wrapper">
-                <img
-                    src={aboutImg}
-                    alt="Myself, Jaume, at George Town, Malaysia"
-                    className="about__wrapper--image"
-                />
-                <div className="about__wrapper--container">
-                    <div className="about__wrapper--container__wrapper">
-                        <div className="about__wrapper--container__wrapper--content">
-                            <TitleElement
-                                title={Titles.about.title}
-                                subtitle={Titles.about.subtitle}
-                            />
-                            <p>
-                                Hello! I'm Jaume. A full stack developer and
-                                software engineer with expertise primarily
-                                focused in front-end development. My life's
-                                mission is to transform user-focused designs
-                                into websites or applications that run blazing
-                                fast.
-                            </p>
-                            <p>
-                                I completed my university degree at the{" "}
-                                <a
-                                    href="https://www.ub.edu/web/portal/en/"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className="about__link"
-                                >
-                                    University of Barcelona
-                                </a>{" "}
-                                in 2020. Currently, I'm working as a software
-                                engineer at{" "}
-                                <a
-                                    href="https://www.quantion.com/en/"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className="about__link"
-                                >
-                                    Quantion
-                                </a>
-                                , contributing my web development experience to
-                                craft various customer-centric solutions.
-                            </p>
-                            <p>
-                                Before joining Quantion, I served as a software
-                                engineer at{" "}
-                                <a
-                                    href="https://www.gi-de.com/en/"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className="about__link"
-                                >
-                                    G+D Mobile Security
-                                </a>
-                                , contributing to the development of full-stack
-                                RESTful microservices and client-oriented
-                                products.
-                            </p>
-                            <p>
-                                Previously, I held the role of a system and
-                                network administrator for several years. During
-                                this time, I managed Windows and Linux servers,
-                                handled networking tasks, oversaw IP telephony,
-                                and adeptly resolved day-to-day challenges to
-                                ensure smooth operations.
-                            </p>
-                            <p>
-                                Have a closer look at my{" "}
-                                <Link to="experience" smooth={true}>
-                                    working history
-                                </Link>
-                                .
-                            </p>
-                        </div>
-                    </div>
-                </div>
+  return (
+    <section id="about" className="about">
+      <div className="about__content">
+        <img
+          src={aboutImg}
+          alt="Myself, Jaume, at George Town, Malaysia"
+          className="about__image"
+        />
+        <div className="about__text-container">
+          <div className="about__text-wrapper">
+            <div className="about__text-content">
+              <TitleElement
+                title={Titles.about.title}
+                subtitle={Titles.about.subtitle}
+              />
+              <p>
+                👋 Hello! I'm Jaume, a full-stack software engineer with over{" "}
+                <strong>6 years of experience</strong>, specializing in{" "}
+                <strong>front-end development</strong>. I focus on transforming
+                user-centric designs into high-performance, scalable
+                applications that deliver seamless user experiences.
+              </p>
+              <p>
+                I earned my{" "}
+                <strong>Bachelor's degree in Computer Science</strong> from the{" "}
+                <a
+                  href="https://www.ub.edu/web/portal/en/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="about__link"
+                >
+                  University of Barcelona
+                </a>
+                , where I developed a strong foundation in software engineering
+                principles.
+              </p>
+              <p>
+                Most recently, I worked as a <strong>Software Engineer</strong>{" "}
+                at{" "}
+                <a
+                  href="https://www.quantion.com/en/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="about__link"
+                >
+                  Quantion
+                </a>
+                , where I contributed to several projects for{" "}
+                <a
+                  href="https://www.lufthansa.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="about__link"
+                >
+                  Lufthansa Airlines
+                </a>
+                , including developing a new project from scratch. I
+                collaborated closely with international teams, solving design,
+                architecture, and development challenges while ensuring
+                high-quality, maintainable code using{" "}
+                <strong>React, TypeScript, and SCSS</strong>. I also optimized
+                workflows with tools like <strong>SonarQube</strong> and{" "}
+                <strong>Azure DevOps pipelines</strong> to streamline
+                development and deployment.
+              </p>
+              <p>
+                Before that, I contributed to the development of full-stack
+                RESTful microservices and intuitive client-focused products at{" "}
+                <a
+                  href="https://www.gi-de.com/en/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="about__link"
+                >
+                  Giesecke+Devrient Mobile Security
+                </a>
+                .
+              </p>
+              <p>
+                Have a look at my portfolio and let's create something amazing
+                together! 🚀
+              </p>
             </div>
-        </section>
-    )
+          </div>
+        </div>
+      </div>
+    </section>
+  )
 }
 
 export default About

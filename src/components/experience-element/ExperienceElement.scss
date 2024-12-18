@@ -1,0 +1,128 @@
+@use "../../abstracts" as *;
+
+.experience-element {
+	@include flex-row;
+	width: 100%;
+
+	&__column-1 {
+		display: flex;
+		flex-direction: column;
+		text-align: right;
+		width: 10%;
+		color: $light-gray-color;
+		font-size: 0.875rem;
+		font-weight: 400;
+		margin: 2.2rem 3rem 0 0;
+		display: none;
+
+		@include tablet {
+			display: block;
+		}
+	}
+
+	&__column-2 {
+		@include flex-column;
+		border-left: 1px solid rgba(255, 255, 255, 0.15);
+		margin-right: 1.5rem;
+		padding: 2rem 0;
+		display: none;
+
+		span {
+			position: absolute;
+			margin-left: -6px;
+			margin-top: 6px;
+			width: 11px;
+			height: 11px;
+			background-color: $primary-color;
+			border-radius: 50%;
+			border: 2px solid $light-gray-color;
+		}
+
+		@include tablet {
+			display: block;
+		}
+	}
+
+	&__column-3 {
+		@include flex-column;
+		flex: 1;
+		padding: 1rem 1.5rem;
+		margin: 1rem 0;
+		font-weight: 500;
+		border-radius: 4px;
+		border: 1px solid rgb(56, 66, 95);
+		background-color: rgba(136, 136, 136, 0.075);
+		gap: 0.5rem;
+
+		p {
+			font-size: 0.875rem;
+		}
+
+		ul {
+			@include badge-list;
+			margin-top: 0.5rem;
+
+			li {
+				@include tech-badge;
+			}
+		}
+
+		&__date {
+			color: $light-gray-color;
+			font-size: 14px;
+			font-weight: 400;
+
+			@media screen and (min-width: 900px) {
+				display: none;
+			}
+		}
+
+		&__title {
+			width: fit-content;
+			color: $gray-accent-color;
+			line-height: 1.5rem;
+			font-size: 1rem;
+			font-weight: 600;
+			transition: all 0.15s ease-in-out;
+
+			&:hover {
+				color: $highlight-color;
+			}
+		}
+
+		&__links {
+			@include flex-row;
+			gap: 1.5rem;
+			margin-top: 0.5rem;
+
+			a {
+				@include flex-row;
+				gap: 0.5rem;
+				align-items: center;
+				border-radius: 9999px;
+				color: $gray-accent-color;
+				font-size: 0.875rem;
+				font-weight: 500;
+				line-height: 1.25rem;
+				transition: all 0.2s ease-in-out;
+
+				svg {
+					font-size: 0.75rem;
+				}
+
+				&:hover {
+					color: $highlight-color;
+				}
+			}
+		}
+
+		@include tablet {
+			background-color: unset;
+			border: 1px solid transparent;
+		}
+	}
+
+	@include desktop {
+		width: 70%;
+	}
+}

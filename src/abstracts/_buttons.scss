@@ -1,86 +1,86 @@
 @use "colors" as *;
 
 @mixin primary-button {
-    color: $secondary-color;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 531.28 200'%3E%3Cdefs%3E%3Cstyle%3E .shape %7B fill: %2338bdf8 /* fill: %2338bdf8; */ %7D %3C/style%3E%3C/defs%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cpolygon class='shape' points='415.81 200 0 200 115.47 0 531.28 0 415.81 200' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
-    background-color: transparent;
-    background-size: 200%;
-    background-position: 200%;
-    background-repeat: no-repeat;
-    border: 1px solid $secondary-color;
-    transition: 0.5s ease-in-out;
-    transition-property: background-position, border, color;
-    font-family: inherit;
-    font-weight: inherit;
-    position: relative;
-    cursor: pointer;
-    z-index: 1;
+	color: $secondary-color;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 531.28 200'%3E%3Cdefs%3E%3Cstyle%3E .shape %7B fill: %2338bdf8 /* fill: %2338bdf8; */ %7D %3C/style%3E%3C/defs%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cpolygon class='shape' points='415.81 200 0 200 115.47 0 531.28 0 415.81 200' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+	background-color: transparent;
+	background-size: 200%;
+	background-position: 200%;
+	background-repeat: no-repeat;
+	border: 1px solid $secondary-color;
+	transition: 0.5s ease-in-out;
+	transition-property: background-position, border, color;
+	font-family: inherit;
+	font-weight: inherit;
+	position: relative;
+	cursor: pointer;
+	z-index: 1;
 
-    &:hover {
-        border: 1px solid $highlight-color;
-        color: $primary-color;
-        background-position: 40%;
-    }
+	&:hover {
+		border: 1px solid $highlight-color;
+		color: $primary-color;
+		background-position: 40%;
+	}
 }
 
 @mixin secondary-button {
-    color: $primary-color;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 531.28 200'%3E%3Cdefs%3E%3Cstyle%3E .shape %7B fill: %230f172a /* fill: %230f172a; */ %7D %3C/style%3E%3C/defs%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cpolygon class='shape' points='415.81 200 0 200 115.47 0 531.28 0 415.81 200' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
-    background-color: $secondary-color;
-    background-size: 200%;
-    background-position: 200%;
-    background-repeat: no-repeat;
-    border: 2px solid $secondary-color;
-    transition: 0.5s ease-in-out;
-    transition-property: background-position, border, color;
-    position: relative;
-    cursor: pointer;
-    z-index: 1;
+	color: $primary-color;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 531.28 200'%3E%3Cdefs%3E%3Cstyle%3E .shape %7B fill: %230f172a /* fill: %230f172a; */ %7D %3C/style%3E%3C/defs%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cpolygon class='shape' points='415.81 200 0 200 115.47 0 531.28 0 415.81 200' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+	background-color: $secondary-color;
+	background-size: 200%;
+	background-position: 200%;
+	background-repeat: no-repeat;
+	border: 2px solid $secondary-color;
+	transition: 0.5s ease-in-out;
+	transition-property: background-position, border, color;
+	position: relative;
+	cursor: pointer;
+	z-index: 1;
 
-    &:hover {
-        border: 2px solid $secondary-color;
-        color: $secondary-color;
-        background-position: 40%;
-    }
+	&:hover {
+		border: 2px solid $secondary-color;
+		color: $secondary-color;
+		background-position: 40%;
+	}
 }
 
 @mixin badge-list {
-    display: flex;
-    flex-wrap: wrap;
-    color: $light-gray-color;
-    gap: 0.375rem;
-    user-select: none;
+	display: flex;
+	flex-wrap: wrap;
+	color: $light-gray-color;
+	gap: 0.375rem;
+	user-select: none;
 }
 
 @mixin tech-badge {
-    display: flex;
-    align-items: center;
-    border-radius: 4px;
-    background-color: $primary-color-dark;
-    color: $light-gray-color;
-    font-size: 0.75rem;
-    padding: 0.25rem 0.75rem;
-    line-height: 1.25rem;
-    gap: 0.5rem;
+	display: flex;
+	align-items: center;
+	border-radius: 4px;
+	background-color: $primary-color-dark;
+	color: $light-gray-color;
+	font-size: 0.75rem;
+	padding: 0.25rem 0.75rem;
+	line-height: 1.25rem;
+	gap: 0.5rem;
 
-    img {
-        width: 1.1rem;
-        height: 1.1rem;
-    }
+	img {
+		width: 1.1rem;
+		height: 1.1rem;
+	}
 }
 
 @mixin tech-badge-secondary {
-    display: flex;
-    align-items: center;
-    line-height: 1.25rem;
-    font-size: 0.75rem;
-    padding: 0.25rem 0.75rem;
-    border-radius: 9999px;
-    background-color: $highlight-color-transparent;
-    color: $highlight-color;
+	display: flex;
+	align-items: center;
+	line-height: 1.25rem;
+	font-size: 0.75rem;
+	padding: 0.25rem 0.75rem;
+	border-radius: 9999px;
+	background-color: $highlight-color-transparent;
+	color: $highlight-color;
 
-    img {
-        width: 1.1rem;
-        height: 1.1rem;
-    }
+	img {
+		width: 1.1rem;
+		height: 1.1rem;
+	}
 }
