@@ -1,4 +1,4 @@
-<img src="/src/assets/Images/thumbnail.jpg" width="100%" />
+<img src="/src/assets/images/thumbnail.jpg" width="100%" />
 
 # Jaume Campderrós - Personal Portfolio
 
