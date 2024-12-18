@@ -1,62 +1,62 @@
 @use "../../abstracts" as *;
 
 .contact {
-    display: flex;
-    position: relative;
-    width: 100%;
-    justify-content: center;
-    padding-block: 7rem;
-    background-color: $primary-color;
+	display: flex;
+	position: relative;
+	width: 100%;
+	justify-content: center;
+	padding-block: 7rem;
+	background-color: $primary-color;
 
-    &__container {
-        @include flex-column;
-        align-items: center;
-        line-height: 1.5;
-        padding: 1rem;
+	&__container {
+		@include flex-column;
+		align-items: center;
+		line-height: 1.5;
+		padding: 1rem;
 
-        &--text {
-            max-width: 600px;
-            text-align: center;
-            color: $light-gray-color;
-            font-size: 1rem;
-            padding: 0 2rem 3rem;
-        }
+		&--text {
+			max-width: 600px;
+			text-align: center;
+			color: $light-gray-color;
+			font-size: 1rem;
+			padding: 0 2rem 3rem;
+		}
 
-        &--social {
-            @include flex-column;
-            text-align: center;
-            padding: 3rem 2rem 0;
-            color: $light-gray-color;
-            font-size: 1rem;
-            gap: 3rem;
+		&--social {
+			@include flex-column;
+			text-align: center;
+			padding: 3rem 2rem 0;
+			color: $light-gray-color;
+			font-size: 1rem;
+			gap: 3rem;
 
-            &__icons {
-                @include flex-center;
-                justify-content: center;
-                gap: 2rem;
+			&__icons {
+				@include flex-center;
+				justify-content: center;
+				gap: 2rem;
 
-                a {
-                    color: $light-gray-color;
-                    border: none;
-                    padding: 0;
-                    font-size: 1.15rem;
-                    box-shadow: none;
-                    transition: all ease-in 0.15s;
+				a {
+					color: $light-gray-color;
+					border: none;
+					padding: 0;
+					font-size: 1.15rem;
+					box-shadow: none;
+					transition: all ease-in 0.15s;
 
-                    &:hover {
-                        color: $highlight-color;
-                        transform: translateY(-2px);
-                    }
-                }
-            }
-        }
+					&:hover {
+						color: $highlight-color;
+						transform: translateY(-2px);
+					}
+				}
+			}
+		}
 
-        @include tablet {
-            max-width: $screen-tablet-min;
-        }
+		@include tablet {
+			max-width: $screen-tablet-min;
+		}
 
-        @include desktop {
-            max-width: $screen-desktop-min;
-        }
-    }
+		@include desktop {
+			max-width: $screen-desktop-min;
+		}
+	}
 }

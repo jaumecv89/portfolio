@@ -1,106 +1,89 @@
 @use "../../abstracts" as *;
 
+.nav-container {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	position: fixed;
+	z-index: 3;
+	transition: all 0.25s ease-in-out;
+
+	&--visible {
+		background-color: #06091880;
+		backdrop-filter: blur(12px);
+		border-bottom: 0.5px solid rgb(46 54 79/1);
+	}
+}
+
 .nav {
-    display: flex;
-    width: 100%;
-    position: fixed;
-    justify-content: center;
-    transition: all 0.25s ease-in-out;
-    z-index: 3;
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.5rem 1rem;
+	color: $secondary-color;
+	line-height: 2.5rem;
 
-    &__container {
-        @include flex-center;
-        width: 100%;
-        color: $secondary-color;
-        justify-content: space-between;
-        line-height: 2.5rem;
-        padding: 0.5rem 1rem;
-        overflow: hidden;
-        user-select: none;
+	@include tablet {
+		max-width: $screen-tablet-min;
+	}
 
-        &--menu {
-            display: none;
-            flex: 1;
-            align-items: center;
-            gap: 2rem;
+	@include desktop {
+		max-width: $screen-desktop-min;
+	}
 
-            a {
-                font-size: 0.875rem;
-                line-height: 1rem;
-                font-weight: 500;
-                color: $secondary-color;
-                cursor: pointer;
-                position: relative;
-                @include text-color-transition(0.25s);
-                @include link-underline-transition(1px, -2px);
-            }
+	&__menu {
+		display: none;
+		gap: 2rem;
 
-            @include tablet {
-                display: flex;
-            }
-        }
+		a {
+			font-size: 0.875rem;
+			line-height: 1rem;
+			font-weight: 500;
+			color: $secondary-color;
+			cursor: pointer;
+			position: relative;
+			@include text-color-transition(0.25s);
+			@include link-underline-transition(1px, -2px);
+		}
 
-        &--logo {
-            display: flex;
-            flex: 1;
+		@include tablet {
+			display: flex;
+		}
+	}
 
-            &__link {
-                display: flex;
-                color: $secondary-color;
-                font-size: 1.25rem;
-                text-transform: uppercase;
-                letter-spacing: -1px;
-                gap: 0.25rem;
-                cursor: pointer;
-                z-index: 20;
+	&__logo {
+		text-transform: uppercase;
+		z-index: 999;
 
-                span:nth-child(1) {
-                    font-weight: 600;
-                }
+		strong {
+			font-weight: 600;
+		}
 
-                span:nth-child(2) {
-                    font-weight: 300;
-                }
-            }
+		@include tablet {
+			margin-inline: auto;
+		}
+	}
 
-            @include tablet {
-                justify-content: center;
-            }
-        }
+	&__contact {
+		display: none;
+		border: none;
+		font-size: 0.875rem;
+		padding-inline: 0.875rem;
+		margin-left: auto;
+		@include primary-button;
 
-        &--contact {
-            display: flex;
-            flex: 1;
-            justify-content: flex-end;
-            display: none;
+		@include tablet {
+			display: block;
+		}
+	}
 
-            &__link {
-                border: none;
-                font-size: 0.875rem;
-                padding-inline: 0.875rem;
-                @include primary-button;
-            }
+	&__burger {
+		display: flex;
+		z-index: 4;
 
-            @include tablet {
-                display: flex;
-            }
-        }
-
-        &--burger {
-            display: flex;
-            z-index: 4;
-
-            @include tablet {
-                display: none;
-            }
-        }
-
-        @include tablet {
-            max-width: $screen-tablet-min;
-        }
-
-        @include desktop {
-            max-width: $screen-desktop-min;
-        }
-    }
+		@include tablet {
+			display: none;
+		}
+	}
 }

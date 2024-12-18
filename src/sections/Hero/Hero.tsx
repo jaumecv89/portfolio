@@ -1,68 +1,71 @@
 import { useEffect, useRef } from "react"
-import { Link } from "react-scroll"
+import { scroller } from "react-scroll"
 import "./Hero.scss"
 
-function getMousePos(evt: MouseEvent) {
-    return {
-        x: evt.pageX,
-        y: evt.pageY,
-    }
-}
-
 const Hero = () => {
-    const followMouseTextRef = useRef<HTMLHeadingElement | null>(null)
-    const followMouseBackgroundRef = useRef<HTMLDivElement | null>(null)
+  const followMouseTextRef = useRef<HTMLHeadingElement | null>(null)
+  const followMouseBackgroundRef = useRef<HTMLDivElement | null>(null)
 
-    const moveMouse = (evt: MouseEvent) => {
-        const pos = getMousePos(evt)
-        if (followMouseTextRef.current) {
-            followMouseTextRef.current.style.backgroundPosition = `${pos.x}px ${pos.y}px`
-        }
-        if (followMouseBackgroundRef.current) {
-            followMouseBackgroundRef.current.style.backgroundPosition = `calc(50% + ${
-                pos.x / 100
-            }px) calc(50% + ${pos.y / 100}px)`
-        }
+  const getMousePos = (evt: MouseEvent) => {
+    return {
+      x: evt.pageX,
+      y: evt.pageY,
     }
+  }
 
-    useEffect(() => {
-        if (window.innerWidth > 960) {
-            document.addEventListener("mousemove", moveMouse)
-        } else {
-            if (followMouseBackgroundRef.current) {
-                followMouseBackgroundRef.current.style.backgroundPosition =
-                    "center"
+  const moveMouse = (evt: MouseEvent) => {
+    const pos = getMousePos(evt)
+    if (followMouseTextRef.current) {
+      followMouseTextRef.current.style.backgroundPosition = `${pos.x}px ${pos.y}px`
+    }
+    if (followMouseBackgroundRef.current) {
+      followMouseBackgroundRef.current.style.backgroundPosition = `calc(50% + ${
+        pos.x / 100
+      }px) calc(50% + ${pos.y / 100}px)`
+    }
+  }
+
+  useEffect(() => {
+    const handleMouseMove = (evt: MouseEvent) => moveMouse(evt)
+
+    if (window.innerWidth > 960) {
+      document.addEventListener("mousemove", handleMouseMove)
+    } else {
+      if (followMouseBackgroundRef.current) {
+        followMouseBackgroundRef.current.style.backgroundPosition = "center"
+      }
+    }
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove)
+    }
+  }, [])
+
+  return (
+    <section id="hero" className="hero">
+      <div className="hero__background" ref={followMouseBackgroundRef} />
+      <div className="hero__container">
+        <div className="hero__content">
+          <h1 ref={followMouseTextRef}>
+            Shaping Ideas through Code Innovation
+          </h1>
+          <p>
+            I'm a software engineer who's passionate about designing and
+            developing products for the utmost seamless user experience.
+          </p>
+          <button
+            onClick={() =>
+              scroller.scrollTo("work", {
+                smooth: true,
+              })
             }
-        }
-        return () => {
-            document.removeEventListener("mousemove", moveMouse)
-        }
-    }, [])
-
-    return (
-        <section id="hero" className="hero">
-            <div className="hero__background" ref={followMouseBackgroundRef} />
-            <div className="hero__container">
-                <div className="hero__container--content">
-                    <h1 ref={followMouseTextRef}>
-                        Shaping Ideas through Code Innovation
-                    </h1>
-                    <p>
-                        I'm a software engineer who's passionate about designing
-                        and developing products for the utmost seamless user
-                        experience.
-                    </p>
-                    <Link
-                        to="work"
-                        smooth={true}
-                        className="hero__container--content__button"
-                    >
-                        Check out my work
-                    </Link>
-                </div>
-            </div>
-        </section>
-    )
+            aria-label="Check out my work"
+          >
+            Check out my work
+          </button>
+        </div>
+      </div>
+    </section>
+  )
 }
 
 export default Hero

@@ -1,98 +1,76 @@
 import { Twirl as Hamburger } from "hamburger-react"
 import { useEffect, useRef, useState } from "react"
-import { Link } from "react-scroll"
-import { MenuItems } from "../../constants/MenuItems"
-import MobileNav from "../MobileNav/MobileNav"
+import { Link, scroller } from "react-scroll"
+import { MenuItems } from "../../constants/menuItems"
+import MobileNav from "../mobile-nav/MobileNav"
 import "./Nav.scss"
 
 const Nav = () => {
-    const burgerMenuRef = useRef<HTMLDivElement>(null)
-    const [toggle, setToggle] = useState(false)
-    const [visible, setVisible] = useState(false)
+  const burgerMenuRef = useRef<HTMLDivElement>(null)
+  const [toggle, setToggle] = useState(false)
+  const [visible, setVisible] = useState(false)
 
-    const toggleVisible = () => {
-        const scrolled = document.documentElement.scrollTop
-        scrolled > window.innerHeight - 50
-            ? setVisible(true)
-            : setVisible(false)
-    }
+  const toggleVisible = () => {
+    const scrolled = document.documentElement.scrollTop
+    scrolled > 150 ? setVisible(true) : setVisible(false)
+  }
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    })
+    setToggle(false)
+  }
+
+  useEffect(() => {
     window.addEventListener("scroll", toggleVisible)
-
-    const scrollToTop = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-        })
-        setToggle(false)
+    return () => {
+      window.removeEventListener("scroll", toggleVisible)
     }
+  }, [])
 
-    useEffect(() => {
-        toggle
-            ? (document.body.style.overflow = "hidden")
-            : (document.body.style.overflow = "unset")
-    }, [toggle])
+  useEffect(() => {
+    document.body.style.overflow = toggle ? "hidden" : "unset"
+  }, [toggle])
 
-    return (
-        <div
-            className="nav"
-            style={
-                visible
-                    ? {
-                          backgroundColor: "#06091880",
-                          backdropFilter: "blur(12px)",
-                          borderBottom: "0.5px solid rgb(46 54 79/1)",
-                      }
-                    : {}
-            }
-        >
-            {toggle && (
-                <MobileNav
-                    setToggle={setToggle}
-                    burgerMenuRef={burgerMenuRef}
-                />
-            )}
-            <div className="nav__container">
-                <div className="nav__container--menu">
-                    <Link to={MenuItems[0].path} smooth={true}>
-                        {MenuItems[0].title}
-                    </Link>
-                    <Link to={MenuItems[1].path} smooth={true}>
-                        {MenuItems[1].title}
-                    </Link>
-                    <Link to={MenuItems[2].path} smooth={true}>
-                        {MenuItems[2].title}
-                    </Link>
-                </div>
-                <div className="nav__container--logo">
-                    <a
-                        onClick={scrollToTop}
-                        className="nav__container--logo__link"
-                    >
-                        <span>Jaume</span>
-                        <span>Campderros</span>
-                    </a>
-                </div>
-                <div className="nav__container--contact">
-                    <Link
-                        to="contact"
-                        smooth={true}
-                        className="nav__container--contact__link"
-                    >
-                        Hit me up
-                    </Link>
-                </div>
-                <div className="nav__container--burger" ref={burgerMenuRef}>
-                    <Hamburger
-                        toggled={toggle}
-                        toggle={setToggle}
-                        color="#ffff"
-                        duration={0.5}
-                    />
-                </div>
-            </div>
+  return (
+    <div className={`nav-container ${visible && "nav-container--visible"}`}>
+      <nav className="nav">
+        {toggle && (
+          <MobileNav setToggle={setToggle} burgerMenuRef={burgerMenuRef} />
+        )}
+        <div className="nav__menu">
+          {MenuItems.map((item, index) => (
+            <Link key={index} to={item.path} smooth={true}>
+              {item.title}
+            </Link>
+          ))}
         </div>
-    )
+        <button onClick={scrollToTop} className="nav__logo">
+          <strong>Jaume</strong> Campderros
+        </button>
+        <button
+          onClick={() =>
+            scroller.scrollTo("contact", {
+              smooth: true,
+            })
+          }
+          className="nav__contact"
+        >
+          Hit me up
+        </button>
+        <div className="nav__burger" ref={burgerMenuRef}>
+          <Hamburger
+            toggled={toggle}
+            toggle={setToggle}
+            color="#ffff"
+            duration={0.5}
+          />
+        </div>
+      </nav>
+    </div>
+  )
 }
 
 export default Nav

@@ -1,52 +1,52 @@
 @use "../../abstracts" as *;
 
 .experience {
-    display: flex;
-    position: relative;
-    width: 100%;
-    justify-content: center;
-    padding-top: 7rem;
-    background-color: $primary-color;
+	display: flex;
+	position: relative;
+	width: 100%;
+	justify-content: center;
+	padding-top: 7rem;
+	background-color: $primary-color;
 
-    &__container {
-        display: flex;
-        flex-direction: column;
-        padding: 1rem;
-        align-items: center;
+	&__container {
+		display: flex;
+		flex-direction: column;
+		padding: 1rem;
+		align-items: center;
 
-        &--resume {
-            display: flex;
-            align-items: center;
-            width: fit-content;
-            margin-top: 5rem;
-            color: $dark-gray-color;
-            text-transform: capitalize;
-            font-weight: 500;
-            gap: 0.5rem;
+		&--resume {
+			display: flex;
+			align-items: center;
+			width: fit-content;
+			margin-top: 5rem;
+			color: $dark-gray-color;
+			text-transform: capitalize;
+			font-weight: 500;
+			gap: 0.5rem;
 
-            span {
-                position: relative;
-                @include link-underline-transition(1px, -1px);
-            }
+			span {
+				position: relative;
+				@include link-underline-transition(1px, -1px);
+			}
 
-            svg {
-                font-size: 0.875rem;
-                transition: all 0.25s ease-in-out;
-            }
+			svg {
+				font-size: 0.875rem;
+				transition: all 0.25s ease-in-out;
+			}
 
-            &:hover {
-                svg {
-                    transform: translateX(5px);
-                }
-            }
-        }
+			&:hover {
+				svg {
+					transform: translateX(5px);
+				}
+			}
+		}
 
-        @include tablet {
-            max-width: $screen-tablet-min;
-        }
+		@include tablet {
+			max-width: $screen-tablet-min;
+		}
 
-        @include desktop {
-            max-width: $screen-desktop-min;
-        }
-    }
+		@include desktop {
+			max-width: $screen-desktop-min;
+		}
+	}
 }

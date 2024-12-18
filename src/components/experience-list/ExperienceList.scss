@@ -1,0 +1,10 @@
+@use "../../abstracts" as *;
+
+.experience-list {
+	@include flex-column;
+	align-items: center;
+}
+
+.text-center {
+	text-align: center;
+}

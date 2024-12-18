@@ -2,67 +2,67 @@
 @use "breakpoints" as *;
 
 @mixin tablet {
-    @media (min-width: #{$screen-tablet-min}) {
-        @content;
-    }
+	@media (min-width: #{$screen-tablet-min}) {
+		@content;
+	}
 }
 
 @mixin desktop {
-    @media (min-width: #{$screen-desktop-min}) {
-        @content;
-    }
+	@media (min-width: #{$screen-desktop-min}) {
+		@content;
+	}
 }
 
 @mixin custom($width) {
-    @media (min-width: $width) {
-        @content;
-    }
+	@media (min-width: $width) {
+		@content;
+	}
 }
 
 @mixin text-color-transition($seconds) {
-    transition: color $seconds ease-in;
-    &:hover {
-        color: $highlight-color;
-        transition: color $seconds ease-out;
-    }
+	transition: color $seconds ease-in;
+	&:hover {
+		color: $highlight-color;
+		transition: color $seconds ease-out;
+	}
 }
 
 @mixin link-underline-transition($height, $bottom) {
-    &:after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        transform: scaleX(0);
-        height: $height;
-        bottom: $bottom;
-        left: 0;
-        background-color: $highlight-color;
-        transform-origin: bottom left;
-        transition: transform 0.25s ease-out;
-    }
+	&:after {
+		content: "";
+		position: absolute;
+		width: 100%;
+		transform: scaleX(0);
+		height: $height;
+		bottom: $bottom;
+		left: 0;
+		background-color: $highlight-color;
+		transform-origin: bottom left;
+		transition: transform 0.25s ease-out;
+	}
 
-    &:hover::after {
-        transform: scaleX(1);
-        transform-origin: bottom left;
-    }
+	&:hover::after {
+		transform: scaleX(1);
+		transform-origin: bottom left;
+	}
 }
 
 @mixin flex-center {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 @mixin flex-row {
-    display: flex;
-    flex-direction: row;
+	display: flex;
+	flex-direction: row;
 }
 
 @mixin flex-column {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 @mixin full-size {
-    width: 100%;
-    height: 100%;
+	width: 100%;
+	height: 100%;
 }
