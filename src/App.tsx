@@ -1,10 +1,10 @@
-import Nav from "./components/nav/Nav"
-import About from "./sections/about/About"
-import Contact from "./sections/contact/Contact"
-import Experience from "./sections/experience/Experience"
-import Footer from "./sections/footer/Footer"
-import Hero from "./sections/hero/Hero"
-import Work from "./sections/work/Work"
+import Nav from "./components/navbar/Nav"
+import About from "./sections/About/About"
+import Contact from "./sections/Contact/Contact"
+import Experience from "./sections/Experience/Experience"
+import Footer from "./sections/Footer/Footer"
+import Hero from "./sections/Hero/Hero"
+import Work from "./sections/Work/Work"
 
 const App = () => {
   return (
