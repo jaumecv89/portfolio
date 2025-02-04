@@ -20,11 +20,12 @@ const About = () => {
                 subtitle={Titles.about.subtitle}
               />
               <p>
-                👋 Hello! I'm Jaume, a full-stack software engineer with over{" "}
-                <strong>6 years of experience</strong>, specializing in{" "}
-                <strong>front-end development</strong>. I focus on transforming
-                user-centric designs into high-performance, scalable
-                applications that deliver seamless user experiences.
+                👋 Hello! I'm Jaume, a <strong>Frontend Engineer</strong> with
+                over <strong>5 years of experience</strong>, specializing in{" "}
+                <strong>React, TypeScript, and modern web technologies</strong>.
+                I focus on building{" "}
+                <strong>high-performance, scalable, and accessible</strong> web
+                applications.
               </p>
               <p>
                 I earned my{" "}
@@ -37,11 +38,11 @@ const About = () => {
                 >
                   University of Barcelona
                 </a>
-                , where I developed a strong foundation in software engineering
-                principles.
+                , where I built a strong foundation in software engineering and
+                UI development.
               </p>
               <p>
-                Most recently, I worked as a <strong>Software Engineer</strong>{" "}
+                Most recently, I worked as a <strong>Frontend Engineer</strong>{" "}
                 at{" "}
                 <a
                   href="https://www.quantion.com/en/"
@@ -51,7 +52,7 @@ const About = () => {
                 >
                   Quantion
                 </a>
-                , where I contributed to several projects for{" "}
+                , contributing to projects for{" "}
                 <a
                   href="https://www.lufthansa.com/"
                   target="_blank"
@@ -60,31 +61,32 @@ const About = () => {
                 >
                   Lufthansa Airlines
                 </a>
-                , including developing a new project from scratch. I
-                collaborated closely with international teams, solving design,
-                architecture, and development challenges while ensuring
-                high-quality, maintainable code using{" "}
-                <strong>React, TypeScript, and SCSS</strong>. I also optimized
-                workflows with tools like <strong>SonarQube</strong> and{" "}
-                <strong>Azure DevOps pipelines</strong> to streamline
-                development and deployment.
+                . I developed <strong>React</strong> applications, optimized
+                performance, and ensured maintainable code with{" "}
+                <strong>TypeScript, testing, and CI/CD automation</strong>.
               </p>
               <p>
-                Before that, I contributed to the development of full-stack
-                RESTful microservices and intuitive client-focused products at{" "}
+                Previously, at{" "}
                 <a
                   href="https://www.gi-de.com/en/"
                   target="_blank"
                   rel="noreferrer"
                   className="about__link"
                 >
-                  Giesecke+Devrient Mobile Security
+                  Giesecke+Devrient
                 </a>
-                .
+                , I worked with <strong>Angular, and TypeScript</strong>,
+                improving UI performance and implementing{" "}
+                <strong>testing strategies</strong> to ensure stability.
               </p>
               <p>
-                Have a look at my portfolio and let's create something amazing
-                together! 🚀
+                I'm passionate about{" "}
+                <strong>
+                  modern UI design, best practices, and building scalable
+                  applications
+                </strong>
+                . Have a look at my portfolio, and let's create something
+                exceptional together! 🚀
               </p>
             </div>
           </div>
